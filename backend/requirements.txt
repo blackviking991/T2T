@@ -1,0 +1,10 @@
+uvicorn==0.27.0
+fastapi==0.109.0
+pydantic>=1.8.0,<2.0.0
+python-multipart
+python-jose[cryptography]
+bcrypt==4.0.1
+passlib
+PyJWT==2.6.0
+python-decouple==3.7
+pydantic[email]
