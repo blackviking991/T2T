@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "65b49bf980045d75ce55b17c"
+  },
+  "forumName": "manager",
+  "fId": "f00001",
+  "desc": "Managers forum"
+},
+{
+  "_id": {
+    "$oid": "65b49c6d80045d75ce55b17d"
+  },
+  "forumName": "developer",
+  "fId": "f00002",
+  "desc": "Developer forum"
+}]

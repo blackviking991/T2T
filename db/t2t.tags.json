@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "65b49ba680045d75ce55b179"
+  },
+  "tId": "t00001",
+  "tagName": "test",
+  "searchString": [
+    "test",
+    "demo",
+    "sample"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b49be380045d75ce55b17a"
+  },
+  "tId": "t00002",
+  "tagName": "dummy",
+  "searchString": [
+    "dummy"
+  ]
+}]

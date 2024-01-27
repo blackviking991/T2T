@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "65b498b080045d75ce55b173"
+  },
+  "pID": "p0001",
+  "title": "test post1",
+  "desc": "test post1",
+  "cteatedTime": {
+    "$timestamp": {
+      "t": 1706334866,
+      "i": 1
+    }
+  },
+  "createdBy": "",
+  "tags": [
+    "test"
+  ],
+  "likes": 0,
+  "commentIds": [
+    ""
+  ],
+  "views": 0,
+  "forumTag": "f00001",
+  "modifiedDate": {
+    "$timestamp": {
+      "t": 1706334866,
+      "i": 2
+    }
+  }
+},
+{
+  "_id": {
+    "$oid": "65b49aab80045d75ce55b174"
+  },
+  "pID": "p0002",
+  "title": "test post2",
+  "desc": "test post2",
+  "cteatedTime": {
+    "$timestamp": {
+      "t": 1706334866,
+      "i": 1
+    }
+  },
+  "createdBy": "e00002",
+  "tags": [
+    "test2"
+  ],
+  "likes": 0,
+  "commentIds": [
+    "c0002"
+  ],
+  "views": 0,
+  "forumTag": "f00002",
+  "modifiedDate": {
+    "$timestamp": {
+      "t": 1706334866,
+      "i": 2
+    }
+  }
+}]

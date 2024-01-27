@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "65b34f7513d503747cf98e70"
+  },
+  "email": "deepak@ti.com",
+  "points": 0,
+  "postCommentCount": 0,
+  "postCommntLikes": 0,
+  "postLikes": 0,
+  "postViews": 0,
+  "commentIds": [
+    "c00001"
+  ],
+  "eId": "e00001",
+  "fName": "Deepak",
+  "forumTags": [
+    "manager",
+    "developer",
+    "open"
+  ],
+  "interestTags": [
+    "devops",
+    "docker"
+  ],
+  "lName": "Poojary",
+  "postIds": [
+    "p00001"
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b497c880045d75ce55b16d"
+  },
+  "email": "deepak2@ti.com",
+  "points": 0,
+  "postCommentCount": 0,
+  "postCommntLikes": 0,
+  "postLikes": 0,
+  "postViews": 0,
+  "commentIds": [
+    "c00001"
+  ],
+  "eId": "e00002",
+  "fName": "Deepak2",
+  "forumTags": [
+    "developer",
+    "open"
+  ],
+  "interestTags": [
+    "java",
+    "docker"
+  ],
+  "lName": "Poojary",
+  "postIds": [
+    "p00002"
+  ]
+}]

@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "65b49ac080045d75ce55b176"
+  },
+  "cId": "c00001",
+  "desc": "test comment1",
+  "likes": 0,
+  "postId": "p0001",
+  "commentedBy": "e00001",
+  "commentedTime": {
+    "$timestamp": {
+      "t": 1706335096,
+      "i": 1
+    }
+  },
+  "parentCommentId": "",
+  "childCommentIDs": [
+    ""
+  ]
+},
+{
+  "_id": {
+    "$oid": "65b49b8b80045d75ce55b177"
+  },
+  "cId": "c00002",
+  "desc": "test comment2",
+  "likes": 0,
+  "postId": "p0001",
+  "commentedBy": "e00002",
+  "commentedTime": {
+    "$timestamp": {
+      "t": 1706335096,
+      "i": 1
+    }
+  },
+  "parentCommentId": "",
+  "childCommentIDs": [
+    ""
+  ]
+}]
