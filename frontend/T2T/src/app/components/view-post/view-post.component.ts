@@ -2,19 +2,19 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-forum-page',
+  selector: 'app-view-post',
   standalone: true,
   imports: [],
-  templateUrl: './forum-page.component.html',
-  styleUrl: './forum-page.component.scss'
+  templateUrl: './view-post.component.html',
+  styleUrl: './view-post.component.scss'
 })
-export class ForumPageComponent {
+export class ViewPostComponent {
 
   route: ActivatedRoute = inject(ActivatedRoute);
-  forumName: String;
+  postId: number; 
 
   constructor() {
-    this.forumName = this.route.snapshot.params['name'];
+    this.postId = Number(this.route.snapshot.params['id']);
   }
 
 }
