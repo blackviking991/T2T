@@ -7,7 +7,7 @@
 6. The /signup should return an access token. Click on Authorize and save the access token ( user logged in )
 7. Use the other authenticated endpoints to simulate role based access or authentication.
 
-## Alternatively Steps to follow to build the docker image (t2tbackend_latest.tar.gz)
+## Alternatively Steps to follow to build the docker image (t2tbackend_latest.tar.gz) [ Link to docker image: (http://tinyurl.com/yujw94xd) ]
 1. The port 8080 is exposed for this image
 2. Please run the container to point to 8080
 3. Run the container and try to access localhost:*_port_*/home
