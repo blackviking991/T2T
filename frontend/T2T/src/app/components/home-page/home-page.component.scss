@@ -25,24 +25,7 @@ a{
   text-decoration: none;
   transition: .25s;
 }
-button{
-  background: transparent;
-  border: none;
-  border-radius: 2em;
-  cursor: pointer;
-  font-size: .875em;
-  font-weight: 600;
-  height: 2em;
-  letter-spacing: -.025em;
-  text-transform: uppercase;
-  transition: .25s;
-}
-button:hover{
-  color: var(--gray-color);
-}
-header{
-  min-height: 100vh;
-}
+
 p{
   color: #dbdbdb;
   font-size: .9em;
@@ -53,19 +36,27 @@ p{
 
 /* CONTAINERS STYLES */
 .container{
-  padding: 0em;
+  padding: 1em;
+}
+.content{
+    height: 100vh;
 }
 .flex-container{
   display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
-
+.column {
+	flex: 1;
+	margin: 2px;
+	padding: 10px;
+	&:first-child { margin-left: 10px; }
+	&:last-child { margin-right: 20px;}
+	
+}
 /* HEADER NAV */
 .ti-logo {
     width: 300px;
-}
-.progress-div{
-    height: auto;
-    width: auto;
 }
 .logo-link{
   color: #ffffff;
@@ -73,23 +64,50 @@ p{
   letter-spacing: .125em;
 }
 .header-nav{
+  padding: 2em;
   align-items: center;
   flex-direction: column;
 }
+// Form styles
+.login-card {
+    display: flex;
+    width: 400px;
+    padding: 1em;
+    margin-top: 50px;
+}
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+mat-card-content {
+    margin-top: 10px;
+    justify-content: center;
+}
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
 
+.error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
 
 /* HEADER CONTENT */
-.example-card {
-    max-width: 400px;
-    background-color: #cfcfcf;
-  }
-
 .header-description{
   margin: auto;
-  max-width: 30em
+  flex: 50%;
 }
 .header-title{
-    color: #ffffff;
+  color: #ffffff;
   font-size: 2.5em;
   letter-spacing: -.025em;
   line-height: 1.25;
@@ -99,7 +117,7 @@ p{
 
 @media only screen and (min-width: 1024px){ 
   /* GLOBAL STYLES */
-  header{
+  .content{
     overflow: hidden;
   } 
   img{
@@ -108,18 +126,14 @@ p{
   
   /* CONTAINERS STYLES */
   .container{
-    padding: 2em;
+    padding: 0em;
   }
   
   /* HEADER NAV */
   .header-nav{
+    padding: 2em;
     flex-direction: row;
     justify-content: space-between;
-  }
-  
-  /* HEADER CONTENT */
-  .header-content{
-    position: relative;
   }
   .header-description{
     margin: 6em 3em 0;
@@ -131,7 +145,24 @@ p{
 }
 
 @media only screen and (orientation: portrait) and (min-height: 1024px){
-  .header-content{
-    margin-top: 15vh;
-  }
 }
+@media screen and (max-width: 980px) {
+    .flex-container .column {
+          margin-bottom: 5px;
+      flex-basis: 40%;
+          &:nth-last-child(2) {
+              margin-right: 0;
+          }
+          &:last-child {
+              flex-basis: 100%;
+              margin: 0;
+          }
+      }
+  }
+  
+  @media screen and (max-width: 680px) {
+      .flex-container .column {
+          flex-basis: 100%;
+          margin: 0 0 5px 0;
+      }
+  }
