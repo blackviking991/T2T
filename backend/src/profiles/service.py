@@ -7,8 +7,8 @@ from profiles.models import UserInDB
 import profiles.utils as profileUtils
 
 def get_user(db, username: str):
-    if username in db:
-        user_data = db[username]
+    if db["users"].find_one({"email":username}):
+        user_data = db["users"].find_one({"email":username})
         return UserInDB(**user_data)
 
 

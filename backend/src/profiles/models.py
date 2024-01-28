@@ -38,7 +38,8 @@ class User(BaseModel):
     disabled: bool or None = None
     
 class UserSignUp(User):
-    password: str
+    # encrypted 
+    password: str 
 
 class UserLogin(BaseModel):
     user_name: str

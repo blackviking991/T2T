@@ -3,12 +3,13 @@
 #
 
 # Imports
-from fastapi import APIRouter, Body, Depends, HTTPException, status
+from fastapi import APIRouter, Body, Depends, HTTPException, status, Request
 from profiles.models import UserLogin, fake_db, UserInDB, UserSignUp
 import profiles.service as profilesService
 import profiles.utils as profileUtils
 import profiles.auth_handler as authMethods
 from profiles.auth_bearer import JWTBearer
+import database.database as dbVars
 
 
 router = APIRouter(
@@ -24,8 +25,8 @@ def profile_root():
 
 ## Registration Link
 @router.post("/signup", tags=["Register"])
-async def create_user(user: UserSignUp = Body(...)):
-    if fake_db.get(str(user.email)):
+async def create_user(request: Request, user: UserSignUp = Body(...)):
+    if dbVars.mongo_db["users"].find_one({"email":user.email}):
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,
                             detail="Only one account allowed per user email")
     
@@ -33,13 +34,15 @@ async def create_user(user: UserSignUp = Body(...)):
     # todo: Ensure frontend passes password hashed (MD5)
     user_signup = UserInDB(email=user.email, first_name=user.first_name, last_name=user.last_name, roles=user.roles, hashed_password=profileUtils.get_password_hash(user.password))
            
-    fake_db[str(user.email)] = dict(user_signup)
+    ##fake_db[str(user.email)] = dict(user_signup)
+    dbVars.mongo_db["users"].insert_one(dict(user_signup))
+    
     return authMethods.signJWT(user)
 
 # Login Link
 @router.post("/login", tags=["Login Page"])
 async def user_login(user: UserLogin = Body(...)):
-    if profilesService.authenticate_user(fake_db, user.user_name, user.password):
+    if profilesService.authenticate_user(dbVars.mongo_db, user.user_name, user.password):
         return {"Message": "Login Successful"}
     return {
         "error": "Wrong login details!"
