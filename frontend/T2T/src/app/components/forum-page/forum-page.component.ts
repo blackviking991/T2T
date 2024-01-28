@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { PostPreviewComponent } from '../post-preview/post-preview.component';
 import { Post } from '../../model/Post';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-forum-page',
   standalone: true,
-  imports: [PostPreviewComponent, CommonModule],
+  imports: [PostPreviewComponent, NavbarComponent, CommonModule],
   templateUrl: './forum-page.component.html',
   styleUrl: './forum-page.component.scss'
 })
