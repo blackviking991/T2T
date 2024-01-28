@@ -17,6 +17,8 @@ class User(BaseModel):
     postCommentCount: Optional[int] = 0
     # Total likes on the comments of the posts by the user
     postCommentLikes: Optional[int] = 0
+    #Total number of views to the post
+    postViewCount: Optional[int] = 0
     # Total likes on the posts by the user
     commentIds: Optional[list]
     interestTags: Optional[list]
