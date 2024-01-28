@@ -10,4 +10,6 @@ export interface User {
     commentIds: number[];
     forumTags: number[];
     joiningDate: Date;
+    likedPosts: number[];
+    likedComments: number[];
 }

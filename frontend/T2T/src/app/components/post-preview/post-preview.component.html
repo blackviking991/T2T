@@ -1,0 +1,51 @@
+@for (post of posts; track post.id) {
+    <div class="post-preview">
+        <div class="post-meta">
+            <div class="post-meta-img-container">
+                <!-- <a [routerLink]="['/profile', post.createdBy]"> -->
+                    <img class="post-meta-img" src="../../../assets/img/default-user-thumbnail.png" />
+                <!-- </a> -->
+            </div>
+            <div class="post-meta-data">
+                <a [routerLink]="['/posts', post.id]" class="preview-link">
+                    <div class="post-author">{{ post.createdBy }}</div>
+                </a>
+                {{ post.createdTime | date: 'longDate' }}
+            </div>
+            
+            <div class="post-likes">
+                <button class="post-likes-btn" (click)="toggleLikes()">
+                    &hearts; {{ post.likes }}
+                </button>
+            </div>
+                
+            <ng-content></ng-content>
+        </div>
+    
+        <div class="info">
+            <h3 class="post-title">
+                <a [routerLink]="['/posts', post.id]" class="preview-link">
+                    <div class="post-title">{{ post.title }}</div>
+                </a>
+            </h3>
+            
+        </div>
+    
+        <div class="tag-chips">
+            <div>
+                <p class="post-content">{{ formatDesc(post.desc) }}</p>
+            </div>
+            <div>
+                @for (tag of post.tags; track tag) {
+                    <span class="tag-chip">
+                        {{ tag }}
+                    </span>
+                }
+            </div>
+        </div>
+    
+    </div>
+} @empty {
+    <h5> No posts available. </h5>
+}
+
