@@ -1,1 +1,12 @@
-<p>{{postId}} post</p>
+<navbar></navbar>
+
+<div class="post-container">
+    <div class="post-content">
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-desc">{{ post.desc }}</div>
+    </div>
+    
+    <div class="comments-section-container">
+        <comments-section [comments]="comments"></comments-section>
+    </div>
+</div>
