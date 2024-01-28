@@ -5,11 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LeaderComponent } from '../leader/leader.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [MatCardModule,MatButtonModule, ReactiveFormsModule,MatInputModule, MatFormFieldModule],
+  imports: [MatCardModule,MatButtonModule, ReactiveFormsModule,MatInputModule, MatFormFieldModule, LeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })

@@ -19,8 +19,7 @@
 /* GLOBAL STYLES */
 .root {
     background: rgb(0,0,0);
-    background: linear-gradient(42deg, rgba(0,0,0,1) 43%, rgba(255,0,0,1) 78%, rgba(255,255,255,1) 95%);
-}
+    background: linear-gradient(42deg, rgba(0,0,0,1) 62%, rgba(255,0,0,1) 100%, rgba(255,255,255,1) 100%);}
 a{
   text-decoration: none;
   transition: .25s;
@@ -47,11 +46,10 @@ p{
   justify-content: center;
 }
 .column {
-	flex: 1;
 	margin: 2px;
 	padding: 10px;
 	&:first-child { margin-left: 10px; }
-	&:last-child { margin-right: 20px;}
+	&:last-child { margin-right: 0;}
 	
 }
 /* HEADER NAV */

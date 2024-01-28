@@ -1,0 +1,16 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <h2>T2T Leader Board</h2>
+      <ul>
+        <li>Leader 1 </li>
+        <li>Leader 2</li>
+      </ul>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Leader Board
+      </button>
+    </div>
+  </mat-drawer-container>
+  
