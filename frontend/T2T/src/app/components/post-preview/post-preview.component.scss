@@ -1,0 +1,101 @@
+.post-preview {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 2%;
+    padding-left: 2%;
+    padding-bottom: 2%;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.post-meta-img-container {
+    display: inline-block;
+    margin: 1%;
+}
+
+.post-meta-img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 30px;
+}
+
+.post-meta-data {
+    display: inline-block;
+    margin: 10px;
+}
+
+.post-author {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.post-likes {
+    display: flex;
+    align-items: center;
+    padding-right: 2%;
+}
+
+.post-likes-btn {
+    background-color: #fff;
+    color: #e40c0c;
+    border: 1px solid #e40c0c;
+    border-radius: 5px;
+}
+
+.post-likes-btn:hover {
+    background-color: #e40c0c;
+    color: #fff;
+}
+
+.like-img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+}
+
+.preview-link {
+    text-decoration: none;
+}
+
+.post-content {
+    color: #555;
+    font-size: 14px;
+}
+
+.post-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.tag-chips {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2%;
+}
+
+.tag-chip {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 25px;
+    border: 1px solid #555;
+    color: #555;
+}
+
+  
