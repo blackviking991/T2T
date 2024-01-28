@@ -2,7 +2,7 @@
 
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-import profiles.auth_handler as authMethods
+import auth.auth_handler as authMethods
 
 
 class JWTBearer(HTTPBearer):

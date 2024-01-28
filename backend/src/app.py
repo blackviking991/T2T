@@ -2,9 +2,10 @@
 # Main Route 
 #
 from fastapi import FastAPI
-import profiles.router as profile_router
+from database.database import lifespan
+import users.router as profile_router
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 app.include_router(profile_router.router)
 

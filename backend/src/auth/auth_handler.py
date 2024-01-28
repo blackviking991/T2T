@@ -1,17 +1,14 @@
 import jwt
-import profiles.constants as profileConstants
-import profiles.utils as profileUtils
+import auth.constants as profileConstants
+import users.utils as profileUtils
 import time
 from typing import Dict
-from profiles.models import UserSignUp
+from users.models import UserSignUp
 
 def signJWT(user: UserSignUp) -> Dict[str, str]:
     
     payload = {
-        "user_id": user.email,
-        "first_name": user.first_name,
-        "last_name": user.last_name,
-        "roles": user.roles,
+        "user_email": user.email,
         "expires": time.time() + float(60*profileConstants.ACCESS_TOKEN_EXPIRE_MINUTES)
     }
     token = jwt.encode(payload, profileConstants.JWT_SECRET, algorithm=profileConstants.JWT_ALGORITHM)

@@ -1,6 +1,7 @@
 
-from pydantic import BaseModel, EmailStr
-from models import UserRoles  
+# Imports
+from models import UserRoles
+
 
 # Fake DB to test JWT Auth
 # Manager login pw is manager1234
@@ -23,26 +24,3 @@ fake_db = {
         "disabled": False
     }
 }
-
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-    expire_time: str
-
-class User(BaseModel):
-    first_name: str
-    last_name: str
-    email: EmailStr
-    roles: list
-    disabled: bool or None = None
-    
-class UserSignUp(User):
-    password: str
-
-class UserLogin(BaseModel):
-    user_name: str
-    password: str
-
-class UserInDB(User):
-    hashed_password: str
