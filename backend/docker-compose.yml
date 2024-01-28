@@ -17,7 +17,9 @@ services:
     depends_on:
       - mdb
   mdb:
-    image: artifactory.itg.ti.com/docker-public/library/mongodb-community-server
+    #image: artifactory.itg.ti.com/docker-public/library/mongodb-community-server
+    # Personal Laptop runs
+    image: mongodb/mongodb-community-server
     volumes:
       - mongo_data:/data/mdb
     ports:
