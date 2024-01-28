@@ -20,13 +20,13 @@ export class ForumPageComponent {
 
   constructor() {
     this.forumName = this.route.snapshot.params['name'];
-    // Temp data
+    // dummy data, make API call
     let post: Post = {
       id: 1,
       title: "Title",
       desc: "DescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescp",
       createdBy: "Test User",
-      createdTime: new Date(),
+      createdAt: new Date(),
       tags: ["tag1", "tag1", "tagsdfadfs"],
       likes: 5,
       commentIds: [1, 2, 3],

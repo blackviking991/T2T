@@ -4,7 +4,8 @@ export interface Comment {
     likes: number;
     postId: number;
     createdBy: string;
-    createdTime: Date;
+    createdAt: Date;
     parentComments: number[];
     childComments: number[];
+    comments: Comment[];
 }

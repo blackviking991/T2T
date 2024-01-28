@@ -10,7 +10,7 @@
                 <a [routerLink]="['/posts', post.id]" class="preview-link">
                     <div class="post-author">{{ post.createdBy }}</div>
                 </a>
-                {{ post.createdTime | date: 'longDate' }}
+                {{ post.createdAt | date: 'longDate' }}
             </div>
             
             <div class="post-likes">
