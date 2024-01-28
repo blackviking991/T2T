@@ -1,0 +1,33 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  web:
+    #build: .
+    #command: bash -c 'uvicorn app:app --host 0.0.0.0'
+    #command: bash -c 'src/main.py'
+    image: t2t-fastapi
+    volumes:
+      - .:/src
+    ports:
+      - 8080:8080
+    environment:
+      - MONGO_DETAILS=mongodb://mdb:27017
+    depends_on:
+      - mdb
+  mdb:
+    image: artifactory.itg.ti.com/docker-public/library/mongodb-community-server
+    volumes:
+      - mongo_data:/data/mdb
+    ports:
+      - 27018:27017
+    expose:
+      - 27018:27017
+    environment:
+      - MONGO_USER=fastapi_usr
+      - MONGO_PASSWORD=fastapi_pwd
+      - MONGO_DB=fastapi_db
+
+volumes:
+  mongo_data:
