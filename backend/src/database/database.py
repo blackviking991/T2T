@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from decouple import config
+import database.constants as dbConstants
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
@@ -7,9 +7,9 @@ from contextlib import asynccontextmanager
 async def lifespan(app: FastAPI):
     print(">>>>>Loading the Mongo connection <<<<<<")
     global mongodb_client 
-    mongodb_client = MongoClient(config("MONGODB_CONNECTION_URL"))
+    mongodb_client = MongoClient(dbConstants.MONGODB_CONNECTION_URL)
     global mongo_db 
-    mongo_db = mongodb_client[config("DB_NAME")]
+    mongo_db = mongodb_client[dbConstants.MONGO_DB_NAME]
     print("connected to the database!!")
     yield
     

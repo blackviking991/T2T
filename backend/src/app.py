@@ -3,7 +3,7 @@
 #
 from fastapi import FastAPI
 from database.database import lifespan
-import profiles.router as profile_router
+import users.router as profile_router
 
 app = FastAPI(lifespan=lifespan)
 
