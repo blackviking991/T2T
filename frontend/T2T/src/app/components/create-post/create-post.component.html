@@ -1,1 +1,36 @@
-<p>Hello</p>
+<div class="add-post-content container">
+    <div class="container" style="height: 100%;">
+      <div class="container top">
+        <h3 class="new-post-title">Create New Post</h3>
+      </div>
+      <form style="margin-top: 20px;" [formGroup]="addPostForm" (ngSubmit)="addPost()">
+        <div class="form-group">
+          <mat-label class="post-title">Title</mat-label>
+          <div>
+            <mat-form-field>
+                <input matInput type="text" [formControlName]="'title'" class="form-control" placeholder="Enter title for post">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-group">
+            <mat-label class="post-title">Description</mat-label>
+            <div>
+                <mat-form-field class="example-full-width">
+                    <textarea matInput type="text" [formControlName]="'desc'" class="form-control" placeholder="Write a short description"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-group" style="height: 700px;">
+          <mat-label class="post-content">Body</mat-label>
+          <editor [formControlName]="'body'" [init]="editorConfig"></editor>
+        </div>
+        <div class="card p-fluid form-group" style="margin-top: 10px;">
+            <mat-label class="post-title">Add tags</mat-label>
+            <p-chips formControlName="values" placeholder="Add tags for this post"></p-chips>
+        </div>
+        <div class="btn">
+            <button mat-raised-button type="submit" color="warn">Post</button>
+        </div>
+      </form >
+    </div>
+  </div>
