@@ -33,7 +33,7 @@ async def create_user(user: UserSignUp = Body(...)):
     
     # Create a new user
     # todo: Ensure frontend passes password hashed (MD5)
-    user_signup = UserInDB(email=user.email, first_name=user.first_name, last_name=user.last_name, roles=user.roles, hashed_password=profileUtils.get_password_hash(user.password))
+    user_signup = UserInDB(email=user.email, firstName=user.firstName, lastName=user.lastName, roles=user.roles, about=user.about, org=user.org, hashed_password=profileUtils.get_password_hash(user.password))
            
     dbVars.mongo_db[dbConstants.COLLECTION_USERS].insert_one(dict(user_signup))
     
