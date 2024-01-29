@@ -11,6 +11,7 @@ class User(BaseModel):
     firstName: str
     lastName: str
     email: EmailStr
+    # [ manager, developer, user ....]
     roles: list
     about: str
     org: list
