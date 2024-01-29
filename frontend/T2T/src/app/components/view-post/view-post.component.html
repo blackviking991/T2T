@@ -2,21 +2,21 @@
  -->
 <div class="root">
     <div class="banner">
-        <h1>Post Heading</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aspernatur atque iste et alias! Sint voluptatum officia nisi enim dolorum. Saepe explicabo nostrum deleniti iste doloribus voluptatibus, laudantium rem in.</p>
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.shortDesc }}</p>
         <div class="user-details">
             <mat-icon class="user-icon"> person_pin</mat-icon>
             <span style="color: white;padding-bottom: 10px;">
-                Username<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">date</span></span>
+                {{ post.createdBy }}<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">{{ post.createdTime | date: 'longDate' }}</span></span>
             <span class="likes"><mat-icon class="heart">favorite</mat-icon>100</span>
         </div>
     </div>
     <div class="post-body">
         <div class="editor">
-            <editor [initialValue]="initialVal" [init]="editorConfig"></editor>
+            <editor [initialValue]="post.desc" [init]="editorConfig"></editor>
         </div>
         <div class="tags">
-            @for (item of tags; track $index) {
+            @for (item of post.tags; track $index) {
                 <mat-chip-listbox>
                     <mat-chip color="primary" ><span>{{item}}</span></mat-chip>
                 </mat-chip-listbox>
@@ -26,6 +26,6 @@
     </div>
     
     <div class="comments-section-container">
-        <comments-section [comments]="post.childComments ?? []"></comments-section>
+        <comments-section [postId]="post.pID ?? ''" [comments]="post.childComments ?? []"></comments-section>
     </div>
 </div>
