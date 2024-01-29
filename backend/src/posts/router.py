@@ -41,6 +41,7 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
         postDb.childComments = postService.render_comment_children(postDb.childComments)
         email = loggedInUser.email
         print(email,post_id)
+        #update post view count by one
         postService.add_post_view_count(email, post_id)
         return {"post": postDb}
     
@@ -87,6 +88,8 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
         # Write to the db
         print("Writing Post with ID {} to the DB", newPost.pID)
         dbVars.mongo_db[dbConstants.COLLECTION_POSTS].insert_one(dict(newPost))
+        # Update user table with postID's created
+        postService.add_post_ids_to_user(loggedInUser.email, newPost.pID)
         return {"Message": "Post Successfully added"}
     
     return {"Message": "Token Expired, please relogin"}
@@ -106,6 +109,7 @@ async def update_like(postID:str, token:str = Depends(JWTBearer())):
         print(postID)
         print(createdBy)
         dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
+        #Update user table with liked post ids
         postService.add_post_like_to_user(createdBy, postID)
         return {"Message": "Like Successfully added"}
     
