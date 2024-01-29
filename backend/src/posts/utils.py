@@ -3,11 +3,11 @@
 # 
 
 # IMPORTS
-import random
+import time
 
 # Generating post ID
 def generate_post_id(title: str):
-    return "p" + title[0] + title[-1] + str(random.randint(00000,99999))
+    return "p" + str(time.time())[-4]
 
 # Enforcing tags to be lowercase
 def make_tags_lowerCase(taglist: list):
