@@ -24,8 +24,8 @@
         </div>
         <hr>
     </div>
+    
     <div class="comments-section-container">
-        <comments-section [comments]="comments"></comments-section>
+        <comments-section [comments]="post.childComments ?? []"></comments-section>
     </div>
-
 </div>
