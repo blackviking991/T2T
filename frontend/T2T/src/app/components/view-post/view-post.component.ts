@@ -35,30 +35,27 @@ export class ViewPostComponent {
     this.postId = Number(this.route.snapshot.params['id']);
     // dummy data, make API call
     this.post = {
-      id: 1,
+      pID: "1",
       title: "Title",
       desc: "DescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescp",
+      shortDesc: "Short Desc",
       createdBy: "Test User",
-      createdAt: new Date(),
+      createdTime: new Date(),
       tags: ["tag1", "tag1", "tagsdfadfs"],
       likes: 5,
-      commentIds: [1, 2, 3],
-      forumTag: 8,
+      forumName: "8",
       views: 50
     }
     let comment: Comment = {
-      id: 1,
-      desc: "Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!",
+      cID: "1",
+      text: "Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!Take me home!",
       likes: 5,
       postId: 3,
       createdBy: "Test User",
-      createdAt: new Date(),
-      parentComments: [1, 2, 3],
-      childComments: [1, 2, 3],
-      comments: []
+      createdTime: new Date()
     }
-    comment.comments = [comment, { ...comment, id: 2}, { ...comment, id: 3}];
-    this.comments = [comment, { ...comment, id: 2}, { ...comment, id: 3}];
+    comment.childComments = [comment, { ...comment, cID: "2"}, { ...comment, cID: "3"}];
+    this.comments = [comment, { ...comment, cID: "2"}, { ...comment, cID: "3"}];
   }
 
 }

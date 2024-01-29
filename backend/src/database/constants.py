@@ -8,3 +8,5 @@ MONGO_DB_NAME = config("DB_NAME")
 COLLECTION_POSTS = "posts"
 COLLECTION_USERS = "users"
 COLLECTION_COMMENTS = "comments"
+COLLECTION_FORUMS = "forums"
+

@@ -1,4 +1,4 @@
-@for (post of posts; track post.id) {
+@for (post of posts; track post.pID) {
     <div class="post-preview">
         <div class="post-meta">
             <div class="post-meta-img-container">
@@ -7,10 +7,10 @@
                 <!-- </a> -->
             </div>
             <div class="post-meta-data">
-                <a [routerLink]="['/posts', post.id]" class="preview-link">
+                <a [routerLink]="['/posts', post.pID]" class="preview-link">
                     <div class="post-author">{{ post.createdBy }}</div>
                 </a>
-                {{ post.createdAt | date: 'longDate' }}
+                {{ post.createdTime | date: 'longDate' }}
             </div>
             
             <div class="post-likes">
@@ -24,7 +24,7 @@
     
         <div class="info">
             <h3 class="post-title">
-                <a [routerLink]="['/posts', post.id]" class="preview-link">
+                <a [routerLink]="['/posts', post.pID]" class="preview-link">
                     <div class="post-title">{{ post.title }}</div>
                 </a>
             </h3>
