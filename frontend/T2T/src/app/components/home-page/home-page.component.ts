@@ -22,11 +22,12 @@ export class HomePageComponent {
 
   submit() {
     if (this.Loginform.valid) {
-      console.log(this.Loginform.value)
+      console.log(this.Loginform.value);
       this.submitEM.emit(this.Loginform.value);
     }
     else{
-      this.error = "Invalid details"
+      this.error = "Invalid details";
+       console.log('invalid form');
     }
   }
   @Input() error!: string | null;
