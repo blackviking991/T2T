@@ -6,7 +6,7 @@ import { MatButton } from '@angular/material/button';
 import { ChipsModule } from 'primeng/chips';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-post',
   standalone: true,
@@ -15,7 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
   styleUrl: './create-post.component.scss'
 })
 export class CreatePostComponent implements OnInit {
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private router: Router){}
 
   addPostForm!: FormGroup;
   title = new FormControl('');
@@ -62,9 +62,13 @@ export class CreatePostComponent implements OnInit {
     })
     .subscribe((res: any) =>{
       console.log(res);
+      window.alert("Post successfully created! Redirecting to profile")
     }),((err: any) => {
       console.log(err);
     });
+    setTimeout(() => {
+      this.router.navigate(['/profile']);
+    }, 3000);
 
   }
 }
