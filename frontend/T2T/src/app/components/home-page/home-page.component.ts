@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HttpClientModule,MatCardModule,MatButtonModule, ReactiveFormsModule,MatInputModule, MatFormFieldModule, LeaderComponent],
+  imports: [HttpClientModule, MatCardModule,MatButtonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, LeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
