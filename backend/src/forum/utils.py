@@ -14,7 +14,7 @@ def forumEntity(item) -> dict:
     return {
         "id":str(item["_id"]),
         "forumName":item["forumName"],
-        "fId":item["fId"]
+        "fID":item["fID"]
     }
     
 def forumsEntity(entity) -> list:

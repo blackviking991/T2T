@@ -1,22 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { EditorModule } from '@tinymce/tinymce-angular'
-import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButton } from '@angular/material/button';
 import { ChipsModule } from 'primeng/chips';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DropdownModule } from 'primeng/dropdown';
+
 @Component({
   selector: 'app-create-post',
   standalone: true,
-  imports: [EditorModule, ReactiveFormsModule, MatInputModule, MatButton, ChipsModule],
+  imports: [HttpClientModule,EditorModule,DropdownModule ,ReactiveFormsModule, MatInputModule, MatButton, ChipsModule],
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.scss'
 })
 export class CreatePostComponent implements OnInit {
+  constructor(private http: HttpClient){}
+
   addPostForm!: FormGroup;
   title = new FormControl('');
+  shortDesc = new FormControl('');
   desc = new FormControl('');
-  body = new FormControl('');
-  values = new FormControl<string[] | null>(null);
+  tags = new FormControl<string[] | null>(null);
+  forumName = new FormControl<string[] | null>(null, Validators.required);
+  forums: any = [];
+
   editorConfig = {
     base_url: '/tinymce',
     suffix: '.min',
@@ -26,18 +34,37 @@ export class CreatePostComponent implements OnInit {
   ngOnInit(): void {
     this.addPostForm = new FormGroup({
       title: this.title,
+      shortDesc: this.shortDesc,
+      tags: this.tags,
       desc: this.desc,
-      values: this.values,
-      body: this.body
+      forumName: this.forumName
     });
+    this.http.get('http://localhost:8080/forum/allForums').subscribe((res: any) =>{
+        console.log(res);
+        this.forums = res;
+    }, ((err: any) => {
+      console.log(err);
+    }));
   }
   addPost() {
-    var obj: any= {};
-    obj['content'] = this.addPostForm.get('body')!.value;
-    console.log(obj);
-    console.log(this.addPostForm.get('body')!.value);
-    console.log(this.addPostForm.get('title')!.value);
+    console.log(this.addPostForm.value);
+    var postBody: any = this.addPostForm.value;
+    postBody.forumName = this.addPostForm.get('forumName')!.value['forumName'];
     console.log(this.addPostForm.get('desc')!.value);
-    console.log(this.addPostForm.get('values')!.value);
+    console.log(this.addPostForm.get('title')!.value);
+    console.log(this.addPostForm.get('shortDesc')!.value);
+    console.log(this.addPostForm.get('tags')!.value);
+    console.log(this.addPostForm.get('forumName')!.value);
+    this.http.post('http://localhost:8080/posts/add', postBody,
+    {headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${localStorage.getItem("access_token")}`}
+    })
+    .subscribe((res: any) =>{
+      console.log(res);
+    }),((err: any) => {
+      console.log(err);
+    });
+
   }
 }

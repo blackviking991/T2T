@@ -16,17 +16,21 @@
             <mat-label class="post-title">Description</mat-label>
             <div>
                 <mat-form-field class="example-full-width">
-                    <textarea matInput type="text" [formControlName]="'desc'" class="form-control" placeholder="Write a short description"></textarea>
+                    <textarea matInput type="text" [formControlName]="'shortDesc'" class="form-control" placeholder="Write a short description"></textarea>
                 </mat-form-field>
             </div>
         </div>
         <div class="form-group" style="height: 700px;">
           <mat-label class="post-content">Body</mat-label>
-          <editor [formControlName]="'body'" [init]="editorConfig"></editor>
+          <editor [formControlName]="'desc'" [init]="editorConfig"></editor>
+        </div>
+        <div class="form-group" style="margin-top: 10px;">
+                <mat-label class="post-title">Forum Name</mat-label><br>
+                <p-dropdown formControlName="forumName" [options]="forums" optionLabel="forumName" placeholder="Select a forum name"></p-dropdown>
         </div>
         <div class="p-fluid form-group" style="margin-top: 10px;">
             <mat-label class="post-title">Add tags</mat-label>
-            <p-chips formControlName="values" placeholder="Add tags for this post"></p-chips>
+            <p-chips formControlName="tags" placeholder="Add tags for this post"></p-chips>
         </div>
         <div class="btn">
             <button mat-raised-button type="submit" color="warn">Post</button>
