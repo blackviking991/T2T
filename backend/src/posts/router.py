@@ -23,7 +23,7 @@ tags=["User Posts Call"]
 # Desc: Retrieve a post by post Id
 #
 @router.get("/get/{post_id}", tags=["Get Posts"])
-async def create_new_post(post_id:str, token:str = Depends(JWTBearer())):
+async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         # todo: Add Role check for the post
@@ -31,6 +31,18 @@ async def create_new_post(post_id:str, token:str = Depends(JWTBearer())):
     
     return {"Message": "Token Expired, please relogin"}
 
+## Get all posts of a forum
+@router.get("/getForumPosts/{forumName}", tags=["Get One Forums posts"])
+async def get_forum_posts(forumName:str, token:str = Depends(JWTBearer())):
+    token_payload = authMethods.decodeJWT(token=token)
+    if token_payload is not None:
+        #if dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].find_one({"forumName":forumName}):
+        #print(list(dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find({"forumName":forumName})))
+        return {"Post": [Post(**post) for post in list(dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find({"forumName":forumName}))]}
+        #else:
+            #return {"Messgae":"No Forums found"}
+        
+    return {"Message": "Token Expired, please relogin"}
 #
 # Desc: Create a new post for a user
 #
@@ -50,3 +62,4 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
         return {"Message": "Post Successfully added"}
     
     return {"Message": "Token Expired, please relogin"}
+
