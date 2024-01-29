@@ -8,3 +8,4 @@ passlib
 PyJWT==2.6.0
 python-decouple==3.7
 pydantic[email]
+pymongo

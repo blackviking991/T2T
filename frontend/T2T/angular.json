@@ -31,10 +31,11 @@
               {"glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/"}
             ],
             "styles": [
+              "src/styles.scss",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": ["node_modules/tinymce/tinymce.min.js"],
+            "scripts": ["node_modules/tinymce/tinymce.min.js","node_modules/bootstrap/dist/js/bootstrap.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
