@@ -12,11 +12,11 @@ class Post(BaseModel):
     shortDesc: str
     createdTime: Optional[datetime]
     createdBy: Optional[EmailStr]
-    tags: Optional[list]
+    tags: Optional[list] = []
     likes: Optional[int]
-    commentIds: Optional[list]
+    commentIds: Optional[list] = []
     views: Optional[int]
-    accessLevels: Optional[list]
+    accessLevels: Optional[list] = []
     forumName: str
     modifiedDate: Optional[datetime]
     childComments: Optional[Any]

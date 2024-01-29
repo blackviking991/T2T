@@ -12,5 +12,5 @@ class Comment(BaseModel):
     postId: str
     likes: Optional[int]
     parentCommentId: Optional[str]
-    childCommentIds: Optional[list]
+    childCommentIds: Optional[list] = []
     childComments: Optional[Any]

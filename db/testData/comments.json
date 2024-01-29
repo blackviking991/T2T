@@ -1,49 +1,102 @@
 [{
   "_id": {
-    "$oid": "65b762524449fdfcfa63e5da"
+    "$oid": "65b777fac8e43e832dadc00d"
   },
-  "cID": "c19446",
-  "text": "Test Comment 1",
+  "cID": "c79526",
+  "text": "Test Comment level 0 for a parent post",
   "createdTime": {
-    "$date": "2024-01-29T08:31:14.819Z"
-  },
-  "createdBy": "engineer12@ti.com",
-  "postId": "p13466",
-  "likes": null,
-  "parentCommentId": null,
-  "childCommentIds": null,
-  "childComments": null,
-  "childCommentId": "c63108"
-},
-{
-  "_id": {
-    "$oid": "65b762834449fdfcfa63e5db"
-  },
-  "cID": "c01626",
-  "text": "Test Post - Test Comment",
-  "createdTime": {
-    "$date": "2024-01-29T08:32:03.740Z"
+    "$date": "2024-01-29T10:03:38.867Z"
   },
   "createdBy": "engineer12@ti.com",
   "postId": "p13456",
   "likes": null,
   "parentCommentId": null,
-  "childCommentIds": null,
+  "childCommentIds": [
+    "c18977"
+  ],
   "childComments": null
 },
 {
   "_id": {
-    "$oid": "65b76327bf8514d60dad6c2c"
+    "$oid": "65b77803c8e43e832dadc00e"
   },
-  "cID": "c63108",
-  "text": "Test Post - Test Comment Thread Level 1",
+  "cID": "c40425",
+  "text": "Test Comment level1  0 for a parent post",
   "createdTime": {
-    "$date": "2024-01-29T08:34:47.146Z"
+    "$date": "2024-01-29T10:03:47.834Z"
   },
   "createdBy": "engineer12@ti.com",
   "postId": "p13456",
   "likes": null,
-  "parentCommentId": "c19446",
-  "childCommentIds": null,
+  "parentCommentId": null,
+  "childCommentIds": [],
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b7780ac8e43e832dadc00f"
+  },
+  "cID": "c73009",
+  "text": "Test Comment level2 0 for a parent post",
+  "createdTime": {
+    "$date": "2024-01-29T10:03:54.173Z"
+  },
+  "createdBy": "engineer12@ti.com",
+  "postId": "p13456",
+  "likes": null,
+  "parentCommentId": null,
+  "childCommentIds": [],
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b77841c8e43e832dadc010"
+  },
+  "cID": "c18977",
+  "text": "Test Comment level 1 for a parent post",
+  "createdTime": {
+    "$date": "2024-01-29T10:04:49.218Z"
+  },
+  "createdBy": "engineer12@ti.com",
+  "postId": "p13456",
+  "likes": null,
+  "parentCommentId": "c79526",
+  "childCommentIds": [
+    "c37044"
+  ],
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b77f7d9743e4714aed1c51"
+  },
+  "cID": "c37044",
+  "text": "Test Comment level 2 for a parent post",
+  "createdTime": {
+    "$date": "2024-01-29T10:35:41.113Z"
+  },
+  "createdBy": "engineer12@ti.com",
+  "postId": "p13456",
+  "likes": null,
+  "parentCommentId": "c18977",
+  "childCommentIds": [
+    "c57574"
+  ],
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b77f899743e4714aed1c52"
+  },
+  "cID": "c57574",
+  "text": "Test Comment level 3 for a parent post",
+  "createdTime": {
+    "$date": "2024-01-29T10:35:53.175Z"
+  },
+  "createdBy": "engineer12@ti.com",
+  "postId": "p13456",
+  "likes": null,
+  "parentCommentId": "c37044",
+  "childCommentIds": [],
   "childComments": null
 }]

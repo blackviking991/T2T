@@ -12,6 +12,7 @@ import auth.auth_handler as authMethods
 import database.constants as dbConstants
 import database.database as dbVars
 import posts.utils as postUtils
+import posts.service as postService
 
 # Router for Posts
 router = APIRouter(
@@ -27,7 +28,17 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         # todo: Add Role check for the post
-        return {"Post": Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"pID": post_id}))}
+        postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"pID": post_id}))
+        
+        # Render Level 1 of comments
+        postService.render_child_comments(postDb)
+        
+        print(postDb)
+        
+        # Dynamically render Level 2 of comments
+        postDb.childComments = postService.render_comment_children(postDb.childComments)
+        
+        return {"Post": postDb}
     
     return {"Message": "Token Expired, please relogin"}
 

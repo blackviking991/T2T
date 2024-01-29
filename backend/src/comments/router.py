@@ -47,10 +47,12 @@ async def create_new_comment(token:str = Depends(JWTBearer()), newComment: Comme
         # Update Child Comment Id in the parent comment
         if newComment.parentCommentId:
             commentService.update_parent_comment(newComment.parentCommentId, newComment.cID)
+        else:
+            commentService.update_post_comment(newComment.postId, newComment.cID)
         
         # Write to the db
         print("Writing Comment with ID {} to the DB", newComment.cID)
         dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].insert_one(dict(newComment))
-        return {"Message": "Comment Successfully added"}
+        return {"Comment Object": dict(newComment)}
     
     return {"Message": "Token Expired, please relogin"}
