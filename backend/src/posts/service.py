@@ -28,3 +28,7 @@ def render_comment_children(childComments: list[Comment]):
                 continue
          
     return childComments
+
+def add_post_like_to_user(email:str, postID:str):
+    print(email, postID)
+    dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$push":{"likedPostsIds": postID}})

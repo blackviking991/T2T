@@ -21,4 +21,5 @@ class Post(BaseModel):
     modifiedDate: Optional[datetime]
     childComments: Optional[Any]
     
-    
+class PostLikes(BaseModel):
+    pID: str
