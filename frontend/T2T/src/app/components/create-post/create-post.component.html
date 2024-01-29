@@ -1,6 +1,6 @@
-<div class="add-post-content container">
-    <div class="container" style="height: 100%;">
-      <div class="container top">
+<div class="add-post-content">
+    <div style="height: 100%;">
+      <div class="top">
         <h3 class="new-post-title">Create New Post</h3>
       </div>
       <form style="margin-top: 20px;" [formGroup]="addPostForm" (ngSubmit)="addPost()">
@@ -24,7 +24,7 @@
           <mat-label class="post-content">Body</mat-label>
           <editor [formControlName]="'body'" [init]="editorConfig"></editor>
         </div>
-        <div class="card p-fluid form-group" style="margin-top: 10px;">
+        <div class="p-fluid form-group" style="margin-top: 10px;">
             <mat-label class="post-title">Add tags</mat-label>
             <p-chips formControlName="values" placeholder="Add tags for this post"></p-chips>
         </div>
