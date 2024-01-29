@@ -28,6 +28,7 @@ tags=["User Posts Call"]
 async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
+        loggedInUser = globalUtils.getLoggedInUser(dict(token_payload).get("user_email"))
         # todo: Add Role check for the post
         postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"pID": post_id}))
         
@@ -38,7 +39,9 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
         
         # Dynamically render Level 2 of comments
         postDb.childComments = postService.render_comment_children(postDb.childComments)
-        
+        email = loggedInUser.email
+        print(email,post_id)
+        postService.add_post_view_count(email, post_id)
         return {"post": postDb}
     
     return {"Message": "Token Expired, please relogin"}
