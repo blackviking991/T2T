@@ -5,7 +5,7 @@ export interface Post {
     title: string;
     desc: string;
     createdBy: string;
-    createdTime: Date;
+    createdAt: Date;
     tags: String[];
     likes: number;
     commentIds: number[];

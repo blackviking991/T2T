@@ -1,0 +1,49 @@
+.navbar {
+    height: 64px;
+    background-color: #555;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+}
+
+.logo {
+    padding-left: 2%;
+}
+
+.logo-link{
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: .125em;
+    text-decoration: none;
+}
+
+.ti-logo {
+    padding-left: 3%;
+}
+
+.search-bar {
+    width: 25%;
+}
+
+.search-bar-input {
+    width: 100%;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search-bar-input:focus {
+    outline-width: 0;
+}
+
+.profile-img-container {
+    padding-right: 3%;
+}
+
+.profile-img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    width: 32px;
+    border-radius: 30px;
+}
