@@ -17,7 +17,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './view-post.component.html',
   styleUrl: './view-post.component.scss'
 })
-export class ViewPostComponent {
+export class ViewPostComponent implements OnInit{
   editorConfig = {
     base_url: '/tinymce',
     suffix: '.min',
@@ -27,10 +27,12 @@ export class ViewPostComponent {
     height: 650,
   };
   route: ActivatedRoute = inject(ActivatedRoute);
-  postId: string; 
+  postId!: string; 
   post!: Post;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {};
+
+  ngOnInit(): void {
     this.postId = this.route.snapshot.params['id'];
     // fetch post by ID
     this.http.get("http://localhost:8080/posts/get/" + this.postId, {
@@ -44,5 +46,4 @@ export class ViewPostComponent {
       console.log("Error fetching post details for id " + this.postId);
     }));
   }
-
 }
