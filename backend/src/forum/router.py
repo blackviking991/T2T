@@ -12,7 +12,7 @@ from auth.auth_bearer import JWTBearer
 import database.database as dbVars
 import database.constants as dbConstants
 from forum.models import Forum
-from forum.schema import forumEntity, forumsEntity
+from forum.utils import forumEntity, forumsEntity, generate_forum_id
 
 
 router = APIRouter(
@@ -35,6 +35,7 @@ async def view_all_forum():
      else:
         return {"Messgae":"No Forums found"}
     
+      
 @router.post("/addForum", tags=["Add Forum"])
 async def create_forum(forum: Forum):
     if dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].find_one({"forumName":forum.forumName}):
@@ -42,7 +43,7 @@ async def create_forum(forum: Forum):
                             detail="Duplicate forum names are not allowed")
     
     # create new forum
-    
+    forum.fId = generate_forum_id(forum.forumName)
     dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].insert_one(dict(forum))
     myForum = forumEntity(dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].find_one({"forumName":forum.forumName}))
     if myForum:
