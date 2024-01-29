@@ -43,7 +43,7 @@ async def create_forum(forum: Forum):
                             detail="Duplicate forum names are not allowed")
     
     # create new forum
-    forum.fId = generate_forum_id(forum.forumName)
+    forum.fID = generate_forum_id(forum.forumName)
     dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].insert_one(dict(forum))
     myForum = forumEntity(dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].find_one({"forumName":forum.forumName}))
     if myForum:
