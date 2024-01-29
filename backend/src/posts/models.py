@@ -9,12 +9,14 @@ class Post(BaseModel):
     pID: Optional[str]
     title: str
     desc: str
+    shortDesc: str
     createdTime: Optional[datetime]
     createdBy: Optional[EmailStr]
     tags: Optional[list]
     likes: Optional[int]
-    commentIds: Optional[list[str]]
+    commentIds: Optional[list]
     views: Optional[int]
+    accessLevels: Optional[list]
     forumName: str
     modifiedDate: Optional[datetime]
     childComments: Optional[Any]
