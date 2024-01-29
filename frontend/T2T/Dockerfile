@@ -13,5 +13,8 @@ COPY . /frontend
 
 EXPOSE 4200
 
-RUN npm run start
+
+RUN npm run build
+
+copy dist -> nginx
  
