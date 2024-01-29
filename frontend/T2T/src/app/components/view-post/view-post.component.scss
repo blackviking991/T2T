@@ -56,23 +56,28 @@ p {
     margin-bottom: 10px;
 }
 .post-body {
-    margin-top: 20px;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 78%, rgba(42,43,45,1) 100%);
+    margin-top: -1px;
 }
+:host ::ng-deep .mat-chip-list-wrapper mat-chip {
+    padding: 0 8px !important;
+  }
 .editor {
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 10px;
 }
 .tags {
     display: flex;
     padding: 20px;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 5%;
     height: max-content;
 }
-mat-chip {
-    background-color: rgb(238, 35, 35);
+mat-chip-listbox {
+    padding: 0 5px 0 5px !important;
 }
-
 .comments-section-container {
     width: 80%;
     margin-left: 10%;

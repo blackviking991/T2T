@@ -7,7 +7,7 @@
         <div class="user-details">
             <img
                 class="user-thumbnail"
-                src="../../../assets/img/default-user-thumbnail.png"
+                src="https://freesvg.org/img/abstract-user-flat-4.png"
                 alt=""
             />
             <span style="color: white; padding-bottom: 10px; margin-left: 10px; padding-top: 5px;">
@@ -20,6 +20,7 @@
             <editor [disabled]="true" [initialValue]="post.desc" [init]="editorConfig"></editor>
         </div>
         <div class="tags">
+            <span style="color: white;padding: 10px;">Tags:</span>
             @for (item of post.tags; track $index) {
                 <mat-chip-listbox>
                     <mat-chip color="primary" ><span>{{item}}</span></mat-chip>
