@@ -4,5 +4,5 @@ from pydantic import BaseModel
 
 class Forum(BaseModel):
     forumName: str
-    fId: Optional[str]
+    fID: Optional[str]
     desc: str
