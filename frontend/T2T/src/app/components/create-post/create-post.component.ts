@@ -28,6 +28,8 @@ export class CreatePostComponent implements OnInit {
   editorConfig = {
     base_url: '/tinymce',
     suffix: '.min',
+    skin: "oxide-dark", 
+    content_css: "dark",
     plugins: 'lists link image code table wordcount save',
     height: 650
   };
