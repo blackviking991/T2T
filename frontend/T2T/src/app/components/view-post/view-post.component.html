@@ -8,7 +8,7 @@
             <mat-icon class="user-icon"> person_pin</mat-icon>
             <span style="color: white;padding-bottom: 10px;">
                 {{ post.createdBy }}<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">{{ post.createdTime | date: 'longDate' }}</span></span>
-            <span class="likes"><mat-icon class="heart">favorite</mat-icon>100</span>
+            <span class="likes"><mat-icon class="heart">&hearts;</mat-icon>{{ post.likes }}</span>
         </div>
     </div>
     <div class="post-body">
