@@ -41,7 +41,7 @@ def add_post_view_count(email:str, postID:str):
     # increase the user table with post view count
     dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$inc": {"postViewCount": +1}})
     # update the user table with viewed post IDs
-    dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$push": {"viewedPostIds": postID}})
+    dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$addToSet": {"viewedPostIds": postID}})
     
 def add_post_ids_to_user(email:str, postID:str):
     print(email, postID)
