@@ -1,14 +1,15 @@
-import { Tag } from "./Tag";
-
 export interface Post {
-    id: number;
+    pID?: string;
     title: string;
     desc: string;
-    createdBy: string;
-    createdAt: Date;
-    tags: String[];
-    likes: number;
-    commentIds: number[];
-    forumTag: number;
-    views: number;
+    shortDesc: string;
+    createdBy?: string;
+    createdTime?: Date;
+    likes?: number;
+    tags?: String[];
+    commentIds?: string[];
+    childComments?: Comment[];
+    forumName: string;
+    views?: number;
+    accessLevelsList?: string[];
 }

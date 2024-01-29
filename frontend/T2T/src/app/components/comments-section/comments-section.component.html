@@ -17,7 +17,7 @@
     </div>
   </div>
 
-    @for (comment of comments; track comment.id) {
+    @for (comment of comments; track comment.cID) {
         <div class="comment comment-level-1">
             <img
                 class="comment-thumbnail"
@@ -28,20 +28,20 @@
             <div class="comment-label">
                 <span class="comment-name">{{ comment.createdBy }} </span>
                 <span class="comment-time">{{
-                comment.createdAt | date : "longDate"
+                    comment.createdTime | date : "longDate"
                 }}</span>
             </div>
             <div class="comment-content">
-                {{ comment.desc }}
+                {{ comment.text }}
             </div>
             <div class="comment-action">
                 <span> <i class="far fa-heart"></i> Like ({{ comment.likes }})</span>
-                <span> <i class="far fa-comment-alt"></i> Comment ({{ comment.comments.length }})</span>
+                <span> <i class="far fa-comment-alt"></i> Comment ({{ comment.childComments?.length }})</span>
             </div>
             </div>
         </div>
 
-        @for (comment2 of comment.comments; track comment2.id) {
+        @for (comment2 of comment.childComments; track comment2.cID) {
             <div class="comment comment-level-2">
                 <img
                     class="comment-thumbnail"
@@ -52,10 +52,10 @@
                 <div class="comment-label">
                     <span class="comment-name">{{ comment2.createdBy }} </span>
                     <span class="comment-time">{{
-                    comment2.createdAt | date : "longDate"
+                    comment2.createdTime | date : "longDate"
                     }}</span>
                 </div>
-                <div class="comment-content">{{ comment2.desc }}</div>
+                <div class="comment-content">{{ comment2.text }}</div>
                 <div class="comment-action">
                     <span> <i class="far fa-heart"></i> Like ({{ comment2.likes }})</span>
                 </div>

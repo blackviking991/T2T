@@ -22,18 +22,18 @@ export class ForumPageComponent {
     this.forumName = this.route.snapshot.params['name'];
     // dummy data, make API call
     let post: Post = {
-      id: 1,
+      pID: "1",
       title: "Title",
       desc: "DescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescpDescp",
+      shortDesc: "Short Desc",
       createdBy: "Test User",
-      createdAt: new Date(),
+      createdTime: new Date(),
       tags: ["tag1", "tag1", "tagsdfadfs"],
       likes: 5,
-      commentIds: [1, 2, 3],
-      forumTag: 8,
+      forumName: "8",
       views: 50
     }
-    this.posts = [post, {...post, desc: "kuygjygk", id: 2}, {...post, id: 3}];
+    this.posts = [post, {...post, desc: "kuygjygk", pID: "2"}, {...post, pID: "3"}];
   }
 
 }

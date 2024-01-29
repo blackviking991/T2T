@@ -1,5 +1,5 @@
 export interface Forum {
-    id: number;
-    name: string;
+    fID?: string;
+    forumName: string;
     desc: string;
 }

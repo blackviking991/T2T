@@ -1,15 +1,18 @@
 export interface User {
-    id: number;
     firstName: string;
     lastName: string;
-    about: string;
     email: string;
-    points: number;
-    interestTags: number[];
-    postIds: number[];
-    commentIds: number[];
-    forumTags: number[];
-    joiningDate: Date;
-    likedPosts: number[];
-    likedComments: number[];
+    about: string;
+    org: string[];
+    points?: number;
+    postCommentCount?: number;
+    postCommentLikes?: number;
+    postViewCount?: number;
+    commentIds?: number[];
+    postIds?: number[];
+    postViews?: number;
+    interestTags?: string[];
+    roles?: string[];
+    likedPosts?: number[];
+    likedComments?: number[];
 }
