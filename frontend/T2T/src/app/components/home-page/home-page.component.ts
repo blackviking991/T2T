@@ -6,11 +6,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LeaderComponent } from '../leader/leader.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [MatCardModule,MatButtonModule, ReactiveFormsModule,MatInputModule, MatFormFieldModule, LeaderComponent],
+  imports: [HttpClientModule, MatCardModule,MatButtonModule, ReactiveFormsModule,MatInputModule, MatFormFieldModule, LeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -19,10 +20,17 @@ export class HomePageComponent {
     email: new FormControl('', [Validators.required, Validators.email ]),
     password: new FormControl('', [Validators.required]),
   });
-
+constructor(private http: HttpClient){};
   submit() {
     if (this.Loginform.valid) {
       console.log(this.Loginform.value);
+      var body = this.Loginform.value;
+      this.http.post('http://localhost:8080/users/login', body).subscribe((res: any) => {
+        console.log(res);
+        localStorage.setItem('access_token', res.access_token);
+      },(err: any) => {
+        console.log(err);
+      });
       this.submitEM.emit(this.Loginform.value);
     }
     else{
