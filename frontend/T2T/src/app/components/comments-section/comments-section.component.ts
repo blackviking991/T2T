@@ -24,6 +24,7 @@ export class CommentsSectionComponent {
   }
 
   pushComment(body: Comment) {
+    if(body.text === "") return;
     this.http.post('http://localhost:8080/comments/add', body, {
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +50,6 @@ export class CommentsSectionComponent {
       console.log(err);
     });
   }
-
   addComment() {
     // cal API
     this.pushComment({
