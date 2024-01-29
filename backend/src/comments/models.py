@@ -10,7 +10,7 @@ class Comment(BaseModel):
     createdTime: Optional[datetime]
     createdBy: Optional[EmailStr]
     postId: str
-    likes: Optional[int]
+    likes: Optional[int] = 0
     parentCommentId: Optional[str]
     childCommentIds: Optional[list] = []
     childComments: Optional[Any]

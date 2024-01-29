@@ -51,6 +51,8 @@ async def create_new_comment(token:str = Depends(JWTBearer()), newComment: Comme
         else:
             commentService.update_post_comment(newComment.postId, newComment.cID)
         
+        # Write the comment ID to the user model
+        commentService.update_user_comment(newComment.cID, loggedInUser)
         # Write to the db
         print("Writing Comment with ID {} to the DB", newComment.cID)
         dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].insert_one(dict(newComment))
