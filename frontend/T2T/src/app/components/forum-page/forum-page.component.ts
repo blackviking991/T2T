@@ -22,7 +22,7 @@ export class ForumPageComponent {
   constructor(private http: HttpClient) {
     this.forumName = this.route.snapshot.params['name'];
     // fetch posts by forumName
-    this.http.get("http://localhost:8080/forum/" + this.forumName, {
+    this.http.get("http://localhost:8080/posts/getForumPosts/" + this.forumName, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("access_token")}`

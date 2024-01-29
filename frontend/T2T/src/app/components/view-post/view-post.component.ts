@@ -27,19 +27,19 @@ export class ViewPostComponent {
     height: 650,
   };
   route: ActivatedRoute = inject(ActivatedRoute);
-  postId: number; 
+  postId: string; 
   post!: Post;
 
   constructor(private http: HttpClient) {
-    this.postId = Number(this.route.snapshot.params['id']);
+    this.postId = this.route.snapshot.params['id'];
     // fetch post by ID
-    this.http.get("http://localhost:8080/forum/" + this.postId, {
+    this.http.get("http://localhost:8080/posts/get/" + this.postId, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("access_token")}`
       }
     }).subscribe((res: any) => {
-      this.post = res.posts;
+      this.post = res.post;
     }, (err => {
       console.log("Error fetching post details for id " + this.postId);
     }));

@@ -38,7 +38,7 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
         # Dynamically render Level 2 of comments
         postDb.childComments = postService.render_comment_children(postDb.childComments)
         
-        return {"Post": postDb}
+        return {"post": postDb}
     
     return {"Message": "Token Expired, please relogin"}
 
@@ -49,7 +49,7 @@ async def get_forum_posts(forumName:str, token:str = Depends(JWTBearer())):
     if token_payload is not None:
         #if dbVars.mongo_db[dbConstants.COLLECTION_FORUMS].find_one({"forumName":forumName}):
         #print(list(dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find({"forumName":forumName})))
-        return {"Post": [Post(**post) for post in list(dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find({"forumName":forumName}))]}
+        return {"posts": [Post(**post) for post in list(dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find({"forumName":forumName}))]}
         #else:
             #return {"Messgae":"No Forums found"}
         
