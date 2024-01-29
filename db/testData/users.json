@@ -1,0 +1,91 @@
+[{
+  "_id": {
+    "$oid": "65b7426b308e0668111de415"
+  },
+  "firstName": "Manager",
+  "lastName": "Manager_LastName",
+  "email": "manager@ti.com",
+  "roles": [
+    "manager",
+    "developer",
+    "email"
+  ],
+  "about": "Test Manager User for T2T",
+  "org": [
+    "EBS",
+    "ITS",
+    "TEST"
+  ],
+  "points": 0,
+  "postCommentCount": 0,
+  "postCommentLikes": 0,
+  "postViewCount": 0,
+  "commentIds": null,
+  "postViews": 0,
+  "likedPostsIds": null,
+  "likedCommentsIds": null,
+  "interestTags": null,
+  "postIds": null,
+  "disabled": null,
+  "hashed_password": "$2b$12$VaL7JmOfrk2S81Ts9wi/f.eRM//lJYTu64giXq9wZXZ5KjuAtnGxS"
+},
+{
+  "_id": {
+    "$oid": "65b7428c308e0668111de416"
+  },
+  "firstName": "Developer",
+  "lastName": "Developer_LastName",
+  "email": "developer@ti.com",
+  "roles": [
+    "developer",
+    "open"
+  ],
+  "about": "Test Developer User for T2T",
+  "org": [
+    "EBS",
+    "ITS",
+    "TEST"
+  ],
+  "points": 0,
+  "postCommentCount": 0,
+  "postCommentLikes": 0,
+  "postViewCount": 0,
+  "commentIds": null,
+  "postViews": 0,
+  "likedPostsIds": null,
+  "likedCommentsIds": null,
+  "interestTags": null,
+  "postIds": null,
+  "disabled": null,
+  "hashed_password": "$2b$12$LFg7CZsP4ozyLq4DWlg/muYWyJS3ILUv3D8wzr02japLNI8KqADsy"
+},
+{
+  "_id": {
+    "$oid": "65b742de308e0668111de417"
+  },
+  "firstName": "Engineer",
+  "lastName": "Engineer_LastName",
+  "email": "engineer@ti.com",
+  "roles": [
+    "engineer",
+    "open"
+  ],
+  "about": "Test Engineer User for T2T",
+  "org": [
+    "EBS",
+    "ITS",
+    "TEST"
+  ],
+  "points": 0,
+  "postCommentCount": 0,
+  "postCommentLikes": 0,
+  "postViewCount": 0,
+  "commentIds": null,
+  "postViews": 0,
+  "likedPostsIds": null,
+  "likedCommentsIds": null,
+  "interestTags": null,
+  "postIds": null,
+  "disabled": null,
+  "hashed_password": "$2b$12$6.AiERkiNOWTEG2rrG6FTekxUidzLUWxrNPpnH0wr80uGAWTlsspK"
+}]

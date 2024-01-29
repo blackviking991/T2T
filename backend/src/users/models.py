@@ -13,7 +13,7 @@ class User(BaseModel):
     email: EmailStr
     roles: list
     about: str
-    org: list[str]
+    org: list
     points: Optional[float] = 0
     # Total comments on the posts by the user
     postCommentCount: Optional[int] = 0

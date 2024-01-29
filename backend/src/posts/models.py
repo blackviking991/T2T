@@ -14,7 +14,7 @@ class Post(BaseModel):
     createdBy: Optional[EmailStr]
     tags: Optional[list]
     likes: Optional[int]
-    commentIds: Optional[list[str]]
+    commentIds: Optional[list]
     views: Optional[int]
     accessLevels: Optional[list]
     forumName: str
