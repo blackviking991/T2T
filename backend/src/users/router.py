@@ -63,6 +63,6 @@ async def read_users_me(token: str = Depends(JWTBearer())) -> dict:
     return {"payload": payload, "user": loggedInUser}
 
 # Get Leaderboard
-@router.post("/getLeaders", tags=["Get Leader Contributors"])
+@router.get("/getLeaders", tags=["Get Leader Contributors"])
 async def get_leaders():
     return [User(**leader) for leader in list(dbVars.mongo_db[dbConstants.COLLECTION_USERS].find().sort("points", -1))]
