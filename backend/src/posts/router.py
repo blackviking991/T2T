@@ -105,9 +105,6 @@ async def update_like(postID:str, token:str = Depends(JWTBearer())):
         createdBy = loggedInUser.email
         
         #likeCount = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({}))
-        print("================ postID")
-        print(postID)
-        print(createdBy)
         dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
         #Update user table with liked post ids
         postService.add_post_like_to_user(createdBy, postID)
