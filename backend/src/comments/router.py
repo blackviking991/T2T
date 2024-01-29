@@ -56,6 +56,6 @@ async def create_new_comment(token:str = Depends(JWTBearer()), newComment: Comme
         # Write to the db
         print("Writing Comment with ID {} to the DB", newComment.cID)
         dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].insert_one(dict(newComment))
-        return {"Comment Object": newComment}
+        return {"comment": newComment}
     
     return {"Message": "Token Expired, please relogin"}
