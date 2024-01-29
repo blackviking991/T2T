@@ -87,6 +87,7 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
         # Write to the db
         print("Writing Post with ID {} to the DB", newPost.pID)
         dbVars.mongo_db[dbConstants.COLLECTION_POSTS].insert_one(dict(newPost))
+        postService.add_post_ids_to_user(loggedInUser.email, newPost.pID)
         return {"Message": "Post Successfully added"}
     
     return {"Message": "Token Expired, please relogin"}

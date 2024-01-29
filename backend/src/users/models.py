@@ -31,6 +31,7 @@ class User(BaseModel):
     likedCommentsIds: Optional[list] = []
     interestTags: Optional[list] = []
     postIds: Optional[list] = []
+    viewedPostIds : Optional[list] = []
     disabled: bool or None = None
     
 class UserSignUp(User):
