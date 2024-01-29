@@ -88,3 +88,22 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
     
     return {"Message": "Token Expired, please relogin"}
 
+#
+# Desc: Like a post
+#
+@router.get("/like/{postID}",  tags=["Update post Likes"])
+async def update_like(postID:str, token:str = Depends(JWTBearer())):
+    token_payload = authMethods.decodeJWT(token=token)
+    if token_payload is not None:
+        loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(token_payload).get("user_email")}))
+        createdBy = loggedInUser.email
+        
+        #likeCount = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({}))
+        print("================ postID")
+        print(postID)
+        print(createdBy)
+        dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
+        postService.add_post_like_to_user(createdBy, postID)
+        return {"Message": "Like Successfully added"}
+    
+    return {"Message": "Token Expired, please relogin"}

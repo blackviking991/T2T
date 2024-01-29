@@ -22,15 +22,15 @@ class User(BaseModel):
     #Total number of views to the post
     postViewCount: Optional[int] = 0
     # Comments by the user
-    commentIds: Optional[list]
+    commentIds: Optional[list] = []
     # Total Views for all the posts for the user
     postViews: Optional[int] = 0
     # Liked posts by the user
-    likedPostsIds: Optional[list]
+    likedPostsIds: Optional[list] = []
     # Liked comments by the user
-    likedCommentsIds: Optional[list]
-    interestTags: Optional[list]
-    postIds: Optional[list]
+    likedCommentsIds: Optional[list] = []
+    interestTags: Optional[list] = []
+    postIds: Optional[list] = []
     disabled: bool or None = None
     
 class UserSignUp(User):
