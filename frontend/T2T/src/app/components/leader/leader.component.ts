@@ -13,11 +13,12 @@ export class LeaderComponent implements OnInit{
   constructor(private http: HttpClient){}
   leaderBoard: any = [];
   ngOnInit(): void {
-      this.http.get('http://localhost:8080/getLeaders').subscribe((data: any) => {
+      this.http.get('http://localhost:8080/users/getLeaders').subscribe((data: any) => {
         console.log(data);
+        this.leaderBoard = data;
       },(err => {
         console.log(err);
-      }))
+      }));
   }
   showFiller = false;
 }
