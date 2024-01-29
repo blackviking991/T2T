@@ -18,7 +18,7 @@ export class ProfilePageComponent {
 
   constructor(private http: HttpClient) {
     // fetch profile
-    this.http.get("http://localhost:8080/profile/me", {
+    this.http.get("http://localhost:8080/users/me", {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("access_token")}`
