@@ -50,8 +50,8 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
 #
 # Desc: Retrieve a post by post Id
 #
-@router.get("/getUserPosts", tags=["Get All Posts for User"])
-async def get_user_posts(token:str = Depends(JWTBearer())):
+@router.get("/getUserPosts/{user_email}", tags=["Get All Posts for User"])
+async def get_user_posts(user_email:str,token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         # todo: Add Role check for the post

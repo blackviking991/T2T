@@ -60,7 +60,7 @@ async def read_users_me(token: str = Depends(JWTBearer())) -> dict:
     payload = authMethods.decodeJWT(token=token)
     loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(payload).get("user_email")}))
     usersService.recalculate_user_points(loggedInUser)
-    return {"payload": payload, "User": loggedInUser}
+    return {"payload": payload, "user": loggedInUser}
 
 # Get Leaderboard
 @router.post("/getLeaders", tags=["Get Leader Contributors"])
