@@ -1,1 +1,28 @@
-<p>{{postId}} post</p>
+<!-- <p>{{postId}} post</p>
+ -->
+<div class="container root">
+    <div class="container banner">
+        <h1>Post Heading</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi aspernatur atque iste et alias! Sint voluptatum officia nisi enim dolorum. Saepe explicabo nostrum deleniti iste doloribus voluptatibus, laudantium rem in.</p>
+        <div class="user-details">
+            <mat-icon class="user-icon"> person_pin</mat-icon>
+            <span style="color: white;padding-bottom: 10px;">
+                Username<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">date</span></span>
+            <span class="likes"><mat-icon class="heart">favorite</mat-icon>100</span>
+        </div>
+    </div>
+    <div class="container post-body">
+        <div class="editor">
+            <editor [initialValue]="initialVal" [init]="editorConfig"></editor>
+        </div>
+        <div class="tags">
+            @for (item of tags; track $index) {
+                <mat-chip-listbox>
+                    <mat-chip color="primary" ><span>{{item}}</span></mat-chip>
+                </mat-chip-listbox>
+            }
+        </div>
+        <hr>
+    </div>
+
+</div>
