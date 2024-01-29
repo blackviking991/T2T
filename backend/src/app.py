@@ -5,13 +5,15 @@ from fastapi import FastAPI
 from database.database import lifespan
 import users.router as profileRouter
 import posts.router as postRouter
-import forum.router as forum_router
+import forum.router as forumRouter
+import comments.router as commentRouter
 
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(profileRouter.router)
 app.include_router(postRouter.router)
-app.include_router(forum_router.router)
+app.include_router(forumRouter.router)
+app.include_router(commentRouter.router)
 
 
 @app.get("/home", tags=["Welcome"])
