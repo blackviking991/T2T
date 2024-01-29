@@ -29,6 +29,10 @@
   }
   mat-form-field {
     height: auto;
+    width: auto;
+  }
+  .p-dropdown-panel .p-dropdown-items  {
+    padding-left: 0em !important;
   }
   .example-full-width {
     width: 100%;

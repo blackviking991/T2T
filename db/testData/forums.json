@@ -1,0 +1,20 @@
+[{
+  "forumName": "Manager",
+  "fID": "man",
+  "desc": "Forum for Managers to manage teams and projects"
+},
+{
+  "forumName": "Developer",
+  "fID": "dev",
+  "desc": "A developer forum to ramp up on new skills and tech-stacks"
+},
+{
+  "forumName": "DevOps",
+  "fID": "devops",
+  "desc": "Devops forum for pipeline related queries and jobs"
+},
+{
+  "forumName": "Testing",
+  "fID": "tst",
+  "desc": "Testing forum for testers to test services and UI"
+}]

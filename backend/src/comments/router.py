@@ -13,6 +13,7 @@ import database.constants as dbConstants
 import database.database as dbVars
 import comments.utils as commentUtils
 import comments.service as commentService
+import globalUtils as globalUtils
 
 # Router for Posts
 router = APIRouter(
@@ -39,7 +40,7 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
 async def create_new_comment(token:str = Depends(JWTBearer()), newComment: Comment = Body(...)):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
-        loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(token_payload).get("user_email")}))
+        loggedInUser = globalUtils.getLoggedInUser(dict(token_payload).get("user_email"))
         newComment.cID = commentUtils.generate_comment_id()
         newComment.createdBy = loggedInUser.email
         newComment.createdTime =  datetime.datetime.utcnow()
