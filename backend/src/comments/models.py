@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional
+from typing import Any, Optional
 from pydantic import BaseModel, EmailStr
 
 
@@ -12,5 +12,5 @@ class Comment(BaseModel):
     postId: str
     likes: Optional[int]
     parentCommentId: Optional[str]
-    childCommentIds: Optional[str]
-    childComments: Optional[any]
+    childCommentIds: Optional[list]
+    childComments: Optional[Any]
