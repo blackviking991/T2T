@@ -50,8 +50,8 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
 #
 # Desc: Retrieve a post by post Id
 #
-@router.get("/getUserPosts", tags=["Get All Posts for User"])
-async def get_user_posts(token:str = Depends(JWTBearer())):
+@router.get("/getUserPosts/{user_email}", tags=["Get All Posts for User"])
+async def get_user_posts(user_email:str,token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         # todo: Add Role check for the post
@@ -105,9 +105,6 @@ async def update_like(postID:str, token:str = Depends(JWTBearer())):
         createdBy = loggedInUser.email
         
         #likeCount = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({}))
-        print("================ postID")
-        print(postID)
-        print(createdBy)
         dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
         #Update user table with liked post ids
         postService.add_post_like_to_user(createdBy, postID)

@@ -59,4 +59,5 @@ async def auth_check() -> dict:
 async def read_users_me(token: str = Depends(JWTBearer())) -> dict:
     payload = authMethods.decodeJWT(token=token)
     loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(payload).get("user_email")}))
-    return {"payload": payload, "User": loggedInUser}
+    usersService.recalculate_user_points(loggedInUser)
+    return {"payload": payload, "user": loggedInUser}

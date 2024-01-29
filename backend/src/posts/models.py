@@ -13,9 +13,9 @@ class Post(BaseModel):
     createdTime: Optional[datetime]
     createdBy: Optional[EmailStr]
     tags: Optional[list] = []
-    likes: Optional[int]
+    likes: Optional[int] = 0
     commentIds: Optional[list] = []
-    views: Optional[int]
+    views: Optional[int] = 0
     accessLevels: Optional[list] = []
     forumName: str
     modifiedDate: Optional[datetime]

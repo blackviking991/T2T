@@ -1,6 +1,7 @@
 
 # Imports
 from models import UserRoles
+from decouple import config
 
 
 # Fake DB to test JWT Auth
@@ -24,3 +25,11 @@ fake_db = {
         "disabled": False
     }
 }
+
+
+# Weights for the gamification algorithm
+USER_COMMENT_LIKES_WEIGHT = config("COMMENT_LIKES_WEIGHT")
+USER_COMMENT_COUNT_WEIGHT = config("COMMENTS_COUNT_WEIGHT")
+USER_POSTS_COUNTS_WEIGHT = config("POSTS_COUNT_WEIGHT")
+USER_POSTS_LIKES_WEIGHT = config("POSTS_LIKES_WEIGHT")
+USER_POSTS_VIEWS_WEIGHT = config("POSTS_VIEW_WEIGHT")

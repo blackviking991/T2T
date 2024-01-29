@@ -5,6 +5,7 @@
 # Imports
 import database.constants as dbConstants
 import database.database as dbVars
+from users.models import UserInDB
 
 
 def update_parent_comment(parentCommentId: str, commentId: str):
@@ -13,3 +14,7 @@ def update_parent_comment(parentCommentId: str, commentId: str):
 # Updated the commentIds of the parent postid   
 def update_post_comment(postId: str, commentId: str):
     dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postId}, {"$push":{"commentIds": commentId}})
+    
+# Update User Model with the CommentIds
+def update_user_comment(commentId : str, user: UserInDB):
+    dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": user.email}, {"$push":{"commentIds": commentId}})
