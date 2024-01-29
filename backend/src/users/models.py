@@ -29,8 +29,11 @@ class User(BaseModel):
     likedPostsIds: Optional[list] = []
     # Liked comments by the user
     likedCommentsIds: Optional[list] = []
+    # User interseted tags
     interestTags: Optional[list] = []
+    # User specific posts iD
     postIds: Optional[list] = []
+    # User viewed psosts ID
     viewedPostIds : Optional[list] = []
     disabled: bool or None = None
     
