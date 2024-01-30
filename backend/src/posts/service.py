@@ -7,6 +7,7 @@ from posts.models import Post
 import database.constants as dbConstants
 import database.database as dbVars
 from comments.models import Comment
+import posts.constants as postConstants
 
 # Rendering the child Comments in the main Post
 def render_child_comments(mainPost: Post):
@@ -49,3 +50,17 @@ def add_post_view_count(email:str, postID:str):
 def add_post_ids_to_user(email:str, postID:str):
     print(email, postID)
     dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$push":{"postIds": postID}})
+
+#Get is liked value for a user Post
+def get_is_liked_for_post(likedPostIds: list, postId: str):
+    return 1 if postId in list(likedPostIds) else 0
+    
+# Get access Level for a new post
+def get_access_level_for_post(userAccessLevel: list):
+    numeric_access_list_min_value = min([postConstants.POST_ACCESS_LEVEL_DICT.get(x) for x in userAccessLevel])
+    if numeric_access_list_min_value is None: 
+        numeric_access_list_min_value = 0
+    
+    return [key for key in postConstants.POST_ACCESS_LEVEL_DICT.keys() if postConstants.POST_ACCESS_LEVEL_DICT.get(key) ==numeric_access_list_min_value ]
+    
+    

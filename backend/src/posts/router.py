@@ -41,10 +41,10 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
             print(postDb)
             # Dynamically render Level 2 of comments
             postDb.childComments = postService.render_comment_children(postDb.childComments)
-            email = loggedInUser.email
-            print(email,post_id)
             #update post view count by one
-            postService.add_post_view_count(email, post_id)
+            postService.add_post_view_count(loggedInUser.email, post_id)
+            # update isLiked for the post
+            postDb.isLiked = postService.get_is_liked_for_post(loggedInUser.likedPostsIds, postDb.pID)
             return {"post": postDb}
         else:
             return {"Message": "You are not authorized to access this post"}
@@ -88,6 +88,7 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
         newPost.createdBy = loggedInUser.email
         newPost.createdTime = newPost.modifiedDate = datetime.datetime.utcnow()
         newPost.tags = postUtils.make_tags_lowerCase(newPost.tags if newPost.tags is not None else [])
+        newPost.accessLevel = postService.get_access_level_for_post(loggedInUser.roles)
         
         # Write to the db
         print("Writing Post with ID {} to the DB", newPost.pID)
