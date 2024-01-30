@@ -4,15 +4,22 @@
     <div class="banner">
         <h1>{{ post.title }}</h1>
         <p>{{ post.shortDesc }}</p>
-        <div class="user-details">
-            <img
-                class="user-thumbnail"
-                src="https://freesvg.org/img/abstract-user-flat-4.png"
-                alt=""
-            />
-            <span style="color: white; padding-bottom: 10px; margin-left: 10px; padding-top: 5px;">
-                {{ post.createdBy }}<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">{{ post.createdTime | date: 'longDate' }}</span>
-            </span>
+        <div class="user-details-container">
+            <div class="user-details">
+                <img
+                    class="user-thumbnail"
+                    src="../../../assets/img/default-user-thumbnail.png"
+                    alt=""
+                />
+                <span style="color: white; padding-bottom: 10px; margin-left: 10px; padding-top: 5px;">
+                    {{ post.createdBy }}<br><span style="color: rgb(214, 214, 214);font-weight: lighter;">{{ post.createdTime | date: 'longDate' }}</span>
+                </span>
+            </div>
+            <div class="post-likes">
+                <button class="post-likes-btn" (click)="toggleLikes()">
+                    &hearts; {{ post.likes }}
+                </button>
+            </div>
         </div>
     </div>
     <div class="post-body">
@@ -24,7 +31,7 @@
             @for (item of post.tags; track $index) {
                 <mat-chip-listbox>
                     <mat-chip color="primary" ><span>{{item}}</span></mat-chip>
-                </mat-chip-listbox>
+                </mat-chip-listbox>&nbsp;
             }
         </div>
         <hr>

@@ -56,6 +56,30 @@ async def create_new_comment(token:str = Depends(JWTBearer()), newComment: Comme
         # Write to the db
         print("Writing Comment with ID {} to the DB", newComment.cID)
         dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].insert_one(dict(newComment))
-        return {"Comment Object": dict(newComment)}
+        return {"comment": newComment}
+    
+    return {"Message": "Token Expired, please relogin"}
+
+#
+# Desc: Like a comment
+#
+@router.get("/like/{commentID}/{isLiked}",  tags=["Update post Likes"])
+async def update_like(commentID:str, isLiked:int, token:str = Depends(JWTBearer())):
+    token_payload = authMethods.decodeJWT(token=token)
+    if token_payload is not None:
+        loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(token_payload).get("user_email")}))
+        createdBy = loggedInUser.email
+        
+        #likeCount = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({}))
+        if isLiked == 1:
+            dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].update_one({"cID": commentID}, { "$inc": { "likes": +1 }})
+            #Update user table with liked comment ids
+            commentService.add_comment_like_to_user(createdBy, commentID)
+        else:
+            dbVars.mongo_db[dbConstants.COLLECTION_COMMENTS].update_one({"cID": commentID}, { "$inc": { "likes": -1 }})
+            #Update user table by removing liked comment ids
+            commentService.remove_comment_like_to_user(createdBy, commentID)
+        
+        return {"Message": "Comment Like Update done"}
     
     return {"Message": "Token Expired, please relogin"}
