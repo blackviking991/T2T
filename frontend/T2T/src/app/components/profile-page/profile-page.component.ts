@@ -4,11 +4,13 @@ import { User } from '../../model/User';
 import { Post } from '../../model/Post';
 import { PostPreviewComponent } from '../post-preview/post-preview.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatButton } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [HttpClientModule, NavbarComponent, PostPreviewComponent],
+  imports: [MatButton, HttpClientModule, NavbarComponent, PostPreviewComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss'
 })
@@ -16,7 +18,7 @@ export class ProfilePageComponent {
   user!: User;
   posts!: Post[];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     // fetch profile
     this.http.get("http://localhost:8080/users/me", {
       headers: {
@@ -40,6 +42,10 @@ export class ProfilePageComponent {
     }, (err => {
       console.log("Error fetching profile details");
     }));
+  }
+
+  createPost(): void {
+    this.router.navigate(['/posts/create']);
   }
 
 }
