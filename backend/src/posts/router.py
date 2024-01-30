@@ -34,17 +34,20 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
         #postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"accessLevel": {"$in": loggedInUser.roles}},{"pID": post_id}))
         postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"pID": post_id}))
         # Render Level 1 of comments
-        postService.render_child_comments(postDb)
+        print("=======",postDb.accessLevel)
         
-        print(postDb)
-        
-        # Dynamically render Level 2 of comments
-        postDb.childComments = postService.render_comment_children(postDb.childComments)
-        email = loggedInUser.email
-        print(email,post_id)
-        #update post view count by one
-        postService.add_post_view_count(email, post_id)
-        return {"post": postDb}
+        if postDb.accessLevel in loggedInUser.roles:
+            postService.render_child_comments(postDb)
+            print(postDb)
+            # Dynamically render Level 2 of comments
+            postDb.childComments = postService.render_comment_children(postDb.childComments)
+            email = loggedInUser.email
+            print(email,post_id)
+            #update post view count by one
+            postService.add_post_view_count(email, post_id)
+            return {"post": postDb}
+        else:
+            return {"Message": "You are not authorized to access this post"}
     
     return {"Message": "Token Expired, please relogin"}
 
