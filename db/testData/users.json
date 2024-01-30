@@ -1,14 +1,13 @@
 [{
   "_id": {
-    "$oid": "65b7426b308e0668111de415"
+    "$oid": "65b7d3929919f16148c16b50"
   },
   "firstName": "Manager",
-  "lastName": "Manager_LastName",
+  "lastName": "MGR",
   "email": "manager@ti.com",
   "roles": [
     "manager",
-    "developer",
-    "email"
+    "developer"
   ],
   "about": "Test Manager User for T2T",
   "org": [
@@ -16,25 +15,144 @@
     "ITS",
     "TEST"
   ],
-  "points": 0,
+  "points": 17.47826086956522,
   "postCommentCount": 0,
   "postCommentLikes": 0,
-  "postViewCount": 0,
-  "commentIds": null,
+  "postViewCount": 206,
+  "commentIds": [
+    "c30884",
+    "c32802",
+    "c80411",
+    "c42337",
+    "c54332",
+    "c02057",
+    "c60798",
+    "c61185",
+    "c22432",
+    "c37666",
+    "c45387",
+    "c42811",
+    "c04063",
+    "c50932",
+    "c45629",
+    "c25166",
+    "c57146",
+    "c12228",
+    "c37345"
+  ],
   "postViews": 0,
-  "likedPostsIds": null,
-  "likedCommentsIds": null,
-  "interestTags": null,
-  "postIds": null,
+  "likedPostsIds": [
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p88293",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p14987",
+    "p06909",
+    "p06909",
+    "p06909"
+  ],
+  "likedCommentsIds": [
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c38981",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c61813",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c42811",
+    "c53282",
+    "c53282",
+    "c53282",
+    "c53282"
+  ],
+  "interestTags": [],
+  "postIds": [
+    "p13577",
+    "p06909",
+    "p14987",
+    "p93057",
+    "p09795",
+    "p83752"
+  ],
   "disabled": null,
-  "hashed_password": "$2b$12$VaL7JmOfrk2S81Ts9wi/f.eRM//lJYTu64giXq9wZXZ5KjuAtnGxS"
+  "hashed_password": "$2b$12$eMZBcbbTTvdYjc4456GqieBAT9GR7qc1fkxOITAK4XhNJrQ9w8sjG",
+  "viewedPostIds": [
+    "p13577",
+    "p06909",
+    "p88293",
+    "p14987"
+  ]
 },
 {
   "_id": {
-    "$oid": "65b7428c308e0668111de416"
+    "$oid": "65b7d3d99919f16148c16b51"
   },
   "firstName": "Developer",
-  "lastName": "Developer_LastName",
+  "lastName": "Ishan",
   "email": "developer@ti.com",
   "roles": [
     "developer",
@@ -49,28 +167,34 @@
   "points": 0,
   "postCommentCount": 0,
   "postCommentLikes": 0,
-  "postViewCount": 0,
-  "commentIds": null,
+  "postViewCount": 4,
+  "commentIds": [],
   "postViews": 0,
-  "likedPostsIds": null,
-  "likedCommentsIds": null,
-  "interestTags": null,
-  "postIds": null,
+  "likedPostsIds": [
+    "p88293"
+  ],
+  "likedCommentsIds": [],
+  "interestTags": [],
+  "postIds": [],
   "disabled": null,
-  "hashed_password": "$2b$12$LFg7CZsP4ozyLq4DWlg/muYWyJS3ILUv3D8wzr02japLNI8KqADsy"
+  "hashed_password": "$2b$12$ELu83dH9Ps6kJmyEZDQXsuOgfTPGIiFj90i.xiWxkCxUAfVeDP1MO",
+  "viewedPostIds": [
+    "",
+    "p88293"
+  ]
 },
 {
   "_id": {
-    "$oid": "65b742de308e0668111de417"
+    "$oid": "65b7d40a9919f16148c16b52"
   },
   "firstName": "Engineer",
-  "lastName": "Engineer_LastName",
+  "lastName": "Atharv",
   "email": "engineer@ti.com",
   "roles": [
-    "engineer",
+    "developer",
     "open"
   ],
-  "about": "Test Engineer User for T2T",
+  "about": "Test Developer User for T2T",
   "org": [
     "EBS",
     "ITS",
@@ -80,42 +204,61 @@
   "postCommentCount": 0,
   "postCommentLikes": 0,
   "postViewCount": 0,
-  "commentIds": null,
+  "commentIds": [],
   "postViews": 0,
-  "likedPostsIds": null,
-  "likedCommentsIds": null,
-  "interestTags": null,
-  "postIds": null,
+  "likedPostsIds": [],
+  "likedCommentsIds": [],
+  "interestTags": [],
+  "postIds": [],
   "disabled": null,
-  "hashed_password": "$2b$12$6.AiERkiNOWTEG2rrG6FTekxUidzLUWxrNPpnH0wr80uGAWTlsspK"
+  "hashed_password": "$2b$12$f4d3LN4didC8A/kKRk/2Z.ivfy9B.aepBo8oVAIeWkJ7SxmgzE.tO",
+  "viewedPostIds": [
+    ""
+  ]
 },
 {
   "_id": {
-    "$oid": "65b7494742410dca14594e91"
+    "$oid": "65b7d72da92e86a555d24a8d"
   },
-  "firstName": "Engineer",
-  "lastName": "Engineer_LastName",
-  "email": "engineer12@ti.com",
+  "firstName": "Deepak",
+  "lastName": "DB",
+  "email": "dbd@ti.com",
   "roles": [
-    "ENGINEER",
-    "OPEN"
+    "developer",
+    "manager"
   ],
-  "about": "Test Engineer User for T2T",
+  "about": "DevOPS engineer",
   "org": [
-    "EBS",
-    "ITS",
-    "TEST"
+    "EBS"
   ],
-  "points": 0,
+  "points": 434786.4347826087,
   "postCommentCount": 0,
   "postCommentLikes": 0,
-  "postViewCount": 0,
-  "commentIds": null,
+  "postViewCount": 16,
+  "commentIds": [
+    "c61114",
+    "c29533",
+    "c53282",
+    "c84818",
+    "c11717"
+  ],
   "postViews": 0,
-  "likedPostsIds": null,
-  "likedCommentsIds": null,
-  "interestTags": null,
-  "postIds": null,
+  "likedPostsIds": [
+    "p88293"
+  ],
+  "likedCommentsIds": [],
+  "interestTags": [],
+  "postIds": [
+    "p08316",
+    "p34028",
+    "p06544",
+    "p08398"
+  ],
+  "viewedPostIds": [
+    "p88293",
+    "p08316",
+    "p14987"
+  ],
   "disabled": null,
-  "hashed_password": "$2b$12$DDl.RUHoee88o5Nog/K/7evtf0WzMyb4Sh35JpYHgvqOsMcVTkCry"
+  "hashed_password": "$2b$12$biWfQBqK8OmLWtRYK0.vnOEnLaK61rzDQEq0r8F02SJTmeS5JIh3G"
 }]

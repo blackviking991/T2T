@@ -1,141 +1,325 @@
 [{
   "_id": {
-    "$oid": "65b743a7308e0668111de418"
+    "$oid": "65b7d49c9919f16148c16b53"
   },
-  "pID": "p13456",
-  "title": "Test Post for T2T",
+  "pID": "p88293",
+  "title": "Test Post 1 by developer in T2T",
   "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
   "shortDesc": "A post about how T2T is amazing",
   "createdTime": {
-    "$date": "2024-01-29T06:20:23.091Z"
+    "$date": "2024-01-29T16:38:52.088Z"
   },
-  "createdBy": "engineer@ti.com",
+  "createdBy": "developer@ti.com",
   "tags": [
-    "manager",
-    "devops"
+    "developer",
+    "t2t",
+    "new post"
   ],
-  "likes": null,
+  "likes": 26,
   "commentIds": [
-    "c79526",
-    "c40425",
-    "c73009"
+    "c61813",
+    "c29582",
+    "c81576",
+    "c96595"
   ],
-  "views": null,
-  "accessLevels": null,
+  "views": 40,
   "forumName": "developer",
   "modifiedDate": {
-    "$date": "2024-01-29T06:20:23.091Z"
+    "$date": "2024-01-29T16:38:52.088Z"
+  },
+  "childComments": [
+    ""
+  ],
+  "accessLevel": "developer"
+},
+{
+  "_id": {
+    "$oid": "65b7d7b5e49a3fb93ebf0238"
+  },
+  "pID": "p13577",
+  "title": "A Manager's post",
+  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
+  "shortDesc": "A post about how T2T is really good!",
+  "createdTime": {
+    "$date": "2024-01-29T16:52:05.891Z"
+  },
+  "createdBy": "manager@ti.com",
+  "tags": [
+    "manager",
+    "good",
+    "t2t",
+    "hackathon"
+  ],
+  "likes": 0,
+  "commentIds": [
+    "c38981",
+    "c30884",
+    "c37666",
+    "c45387"
+  ],
+  "views": 60,
+  "accessLevel": "manager",
+  "forumName": "manager",
+  "modifiedDate": {
+    "$date": "2024-01-29T16:52:05.891Z"
   },
   "childComments": null
 },
 {
   "_id": {
-    "$oid": "65b7451fd46cfe0d446d5bb8"
+    "$oid": "65b7da0c26a145995fcb6500"
   },
-  "pID": "p93595",
-  "title": "Test Post 2 in Developer Forum for T2T",
-  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
-  "shortDesc": "A post about how T2T is amazing",
+  "pID": "p08316",
+  "title": "How To Install Python on Windows 10 and 11",
+  "desc": "Originally created by Guido van Rossum in 1991, Python is a versatile programming language used by makers on the Raspberry Pi, system administrators in the data center, and even by Industrial Light and Magic to bring our movies to life. Python is a great language to learn, and thanks to the Raspberry Pi for the past decade there have been countless tutorials covering the gamut of programming projects. Whether you are a Python veteran, a pythonista or a complete newcomer to the language, installing Python on Windows is an easy task. In this how to we will walk you through installing Python 3 on Windows (including how to install via the Microsoft Store) and show two editors, one for beginners and the other for intermediate and advanced users, and how you can get coding with this fantastic language.",
+  "shortDesc": "How To Install Python on Windows 10 and 11",
   "createdTime": {
-    "$date": "2024-01-29T06:26:39.329Z"
+    "$date": "2024-01-29T17:02:04.460Z"
   },
-  "createdBy": "engineer@ti.com",
+  "createdBy": "dbd@ti.com",
+  "tags": [
+    "python"
+  ],
+  "likes": 0,
+  "commentIds": [],
+  "views": 3,
+  "forumName": "developer",
+  "modifiedDate": {
+    "$date": "2024-01-29T17:02:04.460Z"
+  },
+  "childComments": "string",
+  "accessLevel": "manager"
+},
+{
+  "_id": {
+    "$oid": "65b7db4b2a16fa211e94ab39"
+  },
+  "pID": "p06909",
+  "title": "Angular",
+  "desc": "<figure class=\"mk ml mm mn mo mp mh mi paragraph-image\">\n<div class=\"mq mr fg ms bg mt\" tabindex=\"0\" role=\"button\">\n<div class=\"mh mi mj\"><picture><img class=\"bg lo mu c\" role=\"presentation\" src=\"https://miro.medium.com/v2/resize:fit:1400/1*1HXCJCOpzKdmQI33ZrEIlg.png\" alt=\"\" width=\"700\" height=\"219\" loading=\"eager\"></picture></div>\n</div>\n<figcaption class=\"mv fc mw mh mi mx my be b bf z dt\" data-selectable-paragraph=\"\">New Angular Branding</figcaption>\n</figure>\n<p id=\"6b3e\" class=\"pw-post-body-paragraph mz na gr nb b nc nd ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw gk bj\" data-selectable-paragraph=\"\">Angular version 17 released on November 8, 2023 and the hype is real! There are so many things to talk about and get your head around to create modern web apps and updating your existing Angular apps. You can read about the details of each of the new changes on the&nbsp;<a class=\"af nx\" href=\"https://goo.gle/angular-dot-dev\" target=\"_blank\" rel=\"noopener ugc nofollow\">Angular blog post</a>, but lets talk about why these changes are important to you as an Angular developer.</p>\n<p id=\"170e\" class=\"pw-post-body-paragraph mz na gr nb b nc nd ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw gk bj\" data-selectable-paragraph=\"\">Before diving in, lets take a look at all the new things in v17&hellip;</p>\n<ul class=\"\">\n<li id=\"0f1d\" class=\"mz na gr nb b nc nd ne nf ng nh ni nj nk nl nm nn no np nq nr ns nt nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">logo redesign</li>\n<li id=\"c23a\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">website moving from&nbsp;<a class=\"af nx\" href=\"https://angular.io/\" target=\"_blank\" rel=\"noopener ugc nofollow\">angular.io</a>&nbsp;to&nbsp;<a class=\"af nx\" href=\"https://angular.dev/\" target=\"_blank\" rel=\"noopener ugc nofollow\">angular.dev</a></li>\n<li id=\"fa54\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">standalone applications are now the default for new applications</li>\n<li id=\"b63d\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">signals are out of dev preview and are now stable</li>\n<li id=\"8563\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">server-side rendering improvements</li>\n<li id=\"e34e\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">hydration is out of dev preview and is now stable</li>\n<li id=\"a8b0\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">control flow (<code class=\"cw og oh oi oj b\">@if</code>,&nbsp;<code class=\"cw og oh oi oj b\">@for</code>,&nbsp;<code class=\"cw og oh oi oj b\">@switch</code>) *developer preview</li>\n<li id=\"9732\" class=\"mz na gr nb b nc ob ne nf ng oc ni nj nk od nm nn no oe nq nr ns of nu nv nw ny nz oa bj\" data-selectable-paragraph=\"\">defer&nbsp;<em class=\"ok\">(just going to leave this here because justice can not be paid this briefly)</em>&nbsp;*developer preview</li>\n</ul>\n<h1 id=\"7d1c\" class=\"ol om gr be on oo op oq or os ot ou ov ow ox oy oz pa pb pc pd pe pf pg ph pi bj\" data-selectable-paragraph=\"\">Logo Redesign &amp; New Website</h1>\n<p id=\"44c8\" class=\"pw-post-body-paragraph mz na gr nb b nc pj ne nf ng pk ni nj nk pl nm nn no pm nq nr ns pn nu nv nw gk bj\" data-selectable-paragraph=\"\">While there is a lot to go in to about how much better the new website is, I think the bigger takeaway is that they represent a beacon to the ongoing Angular Revolution. A lot of effort by the team and community has led to some rather large changes in the Angular ecosystem, many of which you can read more about below. The overarching takeaway is that Angular is getting easier&hellip; easier to learn, easier to code, easier to debug and easier to find answers to your questions on the new website.</p>\n<figure class=\"pp pq pr ps pt mp mh mi paragraph-image\">\n<div class=\"mq mr fg ms bg mt\" tabindex=\"0\" role=\"button\">\n<div class=\"mh mi po\"><picture><source srcset=\"https://miro.medium.com/v2/resize:fit:640/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Klh1l7wkoG6PDPb9A5oCHQ.png 1400w\" type=\"image/webp\" sizes=\"(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px\"><source srcset=\"https://miro.medium.com/v2/resize:fit:640/1*Klh1l7wkoG6PDPb9A5oCHQ.png 640w, https://miro.medium.com/v2/resize:fit:720/1*Klh1l7wkoG6PDPb9A5oCHQ.png 720w, https://miro.medium.com/v2/resize:fit:750/1*Klh1l7wkoG6PDPb9A5oCHQ.png 750w, https://miro.medium.com/v2/resize:fit:786/1*Klh1l7wkoG6PDPb9A5oCHQ.png 786w, https://miro.medium.com/v2/resize:fit:828/1*Klh1l7wkoG6PDPb9A5oCHQ.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*Klh1l7wkoG6PDPb9A5oCHQ.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*Klh1l7wkoG6PDPb9A5oCHQ.png 1400w\" sizes=\"(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px\" data-testid=\"og\"><img class=\"bg lo mu c\" role=\"presentation\" src=\"https://miro.medium.com/v2/resize:fit:1400/1*Klh1l7wkoG6PDPb9A5oCHQ.png\" alt=\"\" width=\"700\" height=\"700\" loading=\"lazy\"></picture></div>\n</div>\n<figcaption class=\"mv fc mw mh mi mx my be b bf z dt\" data-selectable-paragraph=\"\">New Angular Logo</figcaption>\n</figure>\n<h1 id=\"d6ff\" class=\"ol om gr be on oo op oq or os ot ou ov ow ox oy oz pa pb pc pd pe pf pg ph pi bj\" data-selectable-paragraph=\"\">Standalone</h1>\n<p id=\"1bcf\" class=\"pw-post-body-paragraph mz na gr nb b nc pj ne nf ng pk ni nj nk pl nm nn no pm nq nr ns pn nu nv nw gk bj\" data-selectable-paragraph=\"\">The recently introduced standalone project structure is now the default for new applications which may not contain&nbsp;<code class=\"cw og oh oi oj b\">NgModules</code>. With a this new structure there are fewer concepts to understand and keep in mind as you build out an application. As a developer you can focus on creating a component tree that covers the needed features. Without standalone the focus of structuring/organizing an application was based upon NgModules, which also caused a disconnect from what a component needed in order to work (dependencies). With the dependencies being specified where they are needed refactors are cleaner. Why? because you know what dependencies are being used at that location with no guessing if something else in an NgModule requires that dependency. The other major benefit is that the structure of both a browser and server application share more code and organization. The bootstrap methods are slightly different in that a browser application calls the&nbsp;<code class=\"cw og oh oi oj b\">bootstrapApplication</code>&nbsp;while the server application exports a function that calls&nbsp;<code class=\"cw og oh oi oj b\">bootstrapApplication</code>. While they are slightly differentc all of the configuration is shared in a&nbsp;<code class=\"cw og oh oi oj b\">src/app/app.config.ts</code>&nbsp;file, which means that changes to one are automatically included in the other. The&nbsp;<code class=\"cw og oh oi oj b\">app.config.ts</code>&nbsp;file is where you will set up your external dependencies, like the Angular router, by calling&nbsp;<code class=\"cw og oh oi oj b\">provideRouter(routes)</code>&nbsp;in the providers array. By standing firmly on the standalone application concept, the Angular team has really underscored the idea that standalone is the suggested way to build Angular applications and the team provided schematics to help you migrate your existing applications to standalone, you can learn more about them&nbsp;<a class=\"af nx\" href=\"https://angular.io/guide/standalone-migration\" target=\"_blank\" rel=\"noopener ugc nofollow\">here</a>.</p>",
+  "shortDesc": "Angular 17",
+  "createdTime": {
+    "$date": "2024-01-29T17:07:23.081Z"
+  },
+  "createdBy": "manager@ti.com",
+  "tags": [
+    "angular",
+    "frontend"
+  ],
+  "likes": 3,
+  "commentIds": [],
+  "views": 33,
+  "forumName": "Developer",
+  "modifiedDate": {
+    "$date": "2024-01-29T17:07:23.081Z"
+  },
+  "childComments": null,
+  "accessLevel": "manager"
+},
+{
+  "_id": {
+    "$oid": "65b88720aafb470e3a56dfef"
+  },
+  "pID": "p34028",
+  "title": "A Manager's post by Deepak",
+  "desc": "How can I be a manager?",
+  "shortDesc": "A post about how T2T is really good!",
+  "createdTime": {
+    "$date": "2024-01-30T05:20:32.234Z"
+  },
+  "createdBy": "dbd@ti.com",
   "tags": [
     "manager",
+    "good",
+    "t2t",
+    "hackathon"
+  ],
+  "likes": 0,
+  "commentIds": [],
+  "views": 10000000,
+  "accessLevel": "manager",
+  "forumName": "manager",
+  "isLiked": 0,
+  "modifiedDate": {
+    "$date": "2024-01-30T05:20:32.234Z"
+  },
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b88f1c09037795c74113fe"
+  },
+  "pID": "p14987",
+  "title": "Manager in 6 steps",
+  "desc": "<h2 class=\"rich-text-component css-12065jw e1tiznh50\">How to become a manager in 6 steps</h2>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Here are six steps you can take to become a manager:</p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">1. Research manager responsibilities</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Before applying for a&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/how-to-be-a-good-manager\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"manager position (Opens in a new window)\">manager position</a>, spend time researching what to expect in a managerial role to determine if it's right for you. This involves learning key information such as common job functions, essential skills and typical salary ranges. Your research ensures you approach becoming a manager informed about what to expect and what employers look for in a manager. Some of the typical responsibilities you might find include:</p>\n<ul class=\"rich-text-component css-1maelww eu4oa1w0\">\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Managing teams of people</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Setting objectives for yourself and your team</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Determining action plans to achieve goals</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Training team members</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Ensuring staff is safe and happy</p>\n</li>\n</ul>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Related:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/am-i-ready-to-be-manager\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"FAQ: Am I Ready To Be a Manager? (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">FAQ: Am I Ready To Be a Manager?</span></a></p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">2. Assess your qualifications</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Next, you can perform a self-assessment to determine your strengths and areas for growth relative to the expected skills of a manager. This helps you set realistic expectations about your timeline for pursuing a managerial position and a baseline to start your preparation.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">To complete a&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/self-assessments\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"self-assessment (Opens in a new window)\">self-assessment</a>, you can review past performance evaluations or ask a trusted colleague for honest, constructive feedback. A leadership mentality is critical to your success as a manager, so include this in your self-assessment. Managers must work well under pressure and give clear feedback to their subordinates. Some other common&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/finding-a-job/qualification-for-manager\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"manager qualifications (Opens in a new window)\">manager qualifications</a>&nbsp;to evaluate are:</p>\n<ul class=\"rich-text-component css-1maelww eu4oa1w0\">\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Relationship-building skills</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Problem-solving skills</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Decision-making skills</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Time-management skills</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Coaching and mentoring skills</p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/resumes-cover-letters/communication-skills?from=careerguide-autohyperlink-en-US\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"Communication skills (Opens in a new window)\">Communication skills</a></p>\n</li>\n<li class=\"rich-text-component css-1jb8p95 eu4oa1w0\">\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Strategic planning skills</p>\n</li>\n</ul>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Read more:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/management-skills\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"Management Skills: Definition and Examples (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">Management Skills: Definition and Examples</span></a></p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">3. Set goals for improving skills</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Using the information from your self-assessment,&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/setting-goals-to-improve-your-career\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"set a goal (Opens in a new window)\">set a goal</a>&nbsp;to strengthen one or more of your growth areas before applying for a manager position. Then, self-assess periodically or ask for feedback from your manager to determine if you're making progress. This will help gauge your readiness and help you support future employees with their growth and development.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">In some cases, you can begin setting skills-improvement goals via your company's framework for goal setting to follow a commonly referenced structure and support. For instance, your organization might use a tiered goals framework that organizes objectives by week, month and year.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Related:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/develop-leadership-skills-and-become-a-great-manager\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"How To Develop Leadership Skills and Become a Great Manager (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">How To Develop Leadership Skills and Become a Great Manager</span></a></p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">4. Share your aspirations with your manager</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">Expressing your managerial aspirations to your supervisor can be valuable, depending on their leadership style. This person may be able to provide honest feedback about your readiness and suggest ways to develop your skills before applying. They might even assign you new projects or offer insight into their own experience as a manager.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Related:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/management-styles\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"7 Management Styles for Effective Leadership (With Examples) (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">7 Management Styles for Effective Leadership (With Examples)</span></a></p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">5. Show your worth</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">To show your worth, you can do so directly and indirectly. For example, adding specific, measurable accomplishments and outcomes to your resume is a direct way to prove you're ready for a manager role. Indirectly, you can model excellent communication and problem-solving skills managers need by speaking up more in meetings, sending clear notes for follow-up after team meetings or offering creative solutions to challenges.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Related:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/finding-a-job/types-of-manager-jobs\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"15 Types of Manager Jobs (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">15 Types of Manager Jobs</span></a></p>\n<h3 class=\"rich-text-component css-2wsx5e e1tiznh50\">6. Explore mentorship opportunities</h3>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\">One way to develop&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/resumes-cover-letters/leadership-skills?from=careerguide-autohyperlink-en-US\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"leadership skills (Opens in a new window)\">leadership skills</a>&nbsp;and work towards becoming a manager is to mentor your colleagues. Consider asking your manager if there are ways you can train or lead employees in areas where you excel. This can give you practice teaching others along with other managerial duties like arranging regular meetings.</p>\n<p class=\"rich-text-component css-1peebnr e1wnkr790\"><span class=\"css-n3w4ap eu4oa1w0\">Related:</span>&nbsp;<a class=\"e19afand0 css-ga72as eac13zx0\" href=\"https://www.indeed.com/career-advice/career-development/delegating-tasks\" target=\"_blank\" rel=\"noopener noreferrer\" data-link-type=\"articleContentLink\" data-link-page-type=\"ARTICLE\" data-dd-action-name=\"click: articleContentLink\" aria-label=\"How To Delegate Tasks in the Workplace: 7 Tips (Opens in a new window)\"><span class=\"css-n3w4ap eu4oa1w0\">How To Delegate Tasks in the Workplace: 7 Tips</span></a></p>\n<div class=\"css-e4eisq eu4oa1w0\" data-testid=\"mosaic-zone\">\n<div id=\"mosaic-inline-above-last-h2\" class=\"mosaic-zone\">\n<div id=\"mosaic-providers-career-guide-static-instresumerevw-cta-inline\" class=\"mosaic mosaic-providers-career-guide-static-instresumerevw-cta-inline mosaic-rst mosaic-provider-hydrated\">\n<div class=\"mosaic-providers-career-guide-static-instresumerevw-cta-inline-1yn6an2 eu4oa1w0\" data-testid=\"inst-resume-revw-cta-inline\">&nbsp;</div>\n</div>\n</div>\n</div>",
+  "shortDesc": "How To Become a Manager in 6 Steps (With Tips for Success)",
+  "createdTime": {
+    "$date": "2024-01-30T05:54:36.715Z"
+  },
+  "createdBy": "manager@ti.com",
+  "tags": [
+    "manager",
+    "career",
+    "ebs",
+    "hack"
+  ],
+  "likes": 8,
+  "commentIds": [
+    "c61114",
+    "c29533",
+    "c53282",
+    "c42811",
+    "c37345"
+  ],
+  "views": 42,
+  "accessLevel": "manager",
+  "forumName": "Manager",
+  "modifiedDate": {
+    "$date": "2024-01-30T05:54:36.715Z"
+  },
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b89fcf13f6207db49f760a"
+  },
+  "pID": "p06544",
+  "title": "Let's talk Docker?",
+  "desc": "The Node Docker Official Image contains all source code, core dependencies, tools, and libraries your application needs to work correctly.This image supports multiple CPU architectures like amd64, arm32v6, arm32v7, arm64v8, ppc641le, and s390x. You can also choose between multiple tags (or image versions) for any project. Choosing a pinned version like node:19.0.0-slim locks you into a stable, streamlined version of Node.js.",
+  "shortDesc": "Want to learn Docker, this is the post for you",
+  "createdTime": {
+    "$date": "2024-01-30T07:05:51.906Z"
+  },
+  "createdBy": "dbd@ti.com",
+  "tags": [
+    "manager",
+    "good",
+    "t2t",
+    "hackathon"
+  ],
+  "likes": 0,
+  "commentIds": [],
+  "views": 0,
+  "accessLevel": "manager",
+  "forumName": "manager",
+  "isLiked": 0,
+  "modifiedDate": {
+    "$date": "2024-01-30T07:05:51.906Z"
+  },
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b8abae033d1993ca0756f3"
+  },
+  "pID": "p08398",
+  "title": "Hi! This is a post for Deepak!",
+  "desc": "<h1 class=\"css-1mudhir\">Create genAI-powered experiences with Atlas Vector Search</h1>\n<p class=\"exp-subtitle\">Build intelligent applications powered by semantic search and generative AI over any type of data.</p>\n<ul>\n<li>Store vector embeddings right next to source data and metadata.</li>\n<li>Vectors that are updated or inserted are automatically synchronized to the vector index.</li>\n<li>Integrates with popular application frameworks such as LlamaIndex, Langchain, and more.</li>\n</ul>",
+  "shortDesc": "Want to know about EBS hackathon? this is the post for you, comment",
+  "createdTime": {
+    "$date": "2024-01-30T07:56:30.308Z"
+  },
+  "createdBy": "dbd@ti.com",
+  "tags": [
+    "ebs",
+    "hack",
+    "hackathon"
+  ],
+  "likes": 0,
+  "commentIds": [],
+  "views": 0,
+  "accessLevel": "manager",
+  "forumName": "Manager",
+  "isLiked": 0,
+  "modifiedDate": {
+    "$date": "2024-01-30T07:56:30.308Z"
+  },
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b8acc50d26d0af9a4144f6"
+  },
+  "pID": "p93057",
+  "title": "Do you want to explore more tech stacks?",
+  "desc": "The Node Docker Official Image contains all source code, core dependencies, tools, and libraries your application needs to work correctly.This image supports multiple CPU architectures like amd64, arm32v6, arm32v7, arm64v8, ppc641le, and s390x. You can also choose between multiple tags (or image versions) for any project. Choosing a pinned version like node:19.0.0-slim locks you into a stable, streamlined version of Node.js.",
+  "shortDesc": "Please comment on this post",
+  "createdTime": {
+    "$date": "2024-01-30T08:01:09.529Z"
+  },
+  "createdBy": "manager@ti.com",
+  "tags": [
+    "manager",
+    "good",
+    "t2t",
+    "hackathon"
+  ],
+  "likes": 0,
+  "commentIds": [],
+  "views": 0,
+  "accessLevel": "manager",
+  "forumName": "manager",
+  "isLiked": 0,
+  "modifiedDate": {
+    "$date": "2024-01-30T08:01:09.529Z"
+  },
+  "childComments": null
+},
+{
+  "_id": {
+    "$oid": "65b8ae59907139e7b850e21c"
+  },
+  "pID": "p09795",
+  "title": "Ebs hack",
+  "desc": "<h1>EBS</h1>\n<p>A sample para graph.</p>\n<p><code>&lt;h1&gt; HEllo &lt;World&gt;</code></p>\n<p>&nbsp;</p>",
+  "shortDesc": "a breif intro for hackathon",
+  "createdTime": {
+    "$date": "2024-01-30T08:07:53.709Z"
+  },
+  "createdBy": "manager@ti.com",
+  "tags": [
+    "manager",
+    "frontend",
     "devops",
-    "t2t"
+    "ebs"
   ],
-  "likes": null,
+  "likes": 0,
   "commentIds": [],
-  "views": null,
-  "accessLevels": null,
-  "forumName": "developer",
+  "views": 0,
+  "accessLevel": "manager",
+  "forumName": "Manager",
+  "isLiked": 0,
   "modifiedDate": {
-    "$date": "2024-01-29T06:26:39.329Z"
+    "$date": "2024-01-30T08:07:53.709Z"
   },
   "childComments": null
 },
 {
   "_id": {
-    "$oid": "65b746b0d46cfe0d446d5bb9"
+    "$oid": "65b8b47620357a55ae2a69b6"
   },
-  "pID": "p09086",
-  "title": "Test Post in Manager Forum for T2T",
-  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
-  "shortDesc": "A post about how T2T is amazing",
+  "pID": "p83752",
+  "title": "Do you want to explore more tech stacks?",
+  "desc": "The Node Docker Official Image contains all source code, core dependencies, tools, and libraries your application needs to work correctly.This image supports multiple CPU architectures like amd64, arm32v6, arm32v7, arm64v8, ppc641le, and s390x. You can also choose between multiple tags (or image versions) for any project. Choosing a pinned version like node:19.0.0-slim locks you into a stable, streamlined version of Node.js.",
+  "shortDesc": "Please comment on this post",
   "createdTime": {
-    "$date": "2024-01-29T06:33:20.250Z"
+    "$date": "2024-01-30T08:33:58.988Z"
   },
-  "createdBy": "engineer@ti.com",
+  "createdBy": "manager@ti.com",
   "tags": [
     "manager",
-    "t2t"
-  ],
-  "likes": null,
-  "commentIds": [],
-  "views": null,
-  "accessLevels": null,
-  "forumName": "manager",
-  "modifiedDate": {
-    "$date": "2024-01-29T06:33:20.250Z"
-  },
-  "childComments": null
-},
-{
-  "_id": {
-    "$oid": "65b746bcd46cfe0d446d5bba"
-  },
-  "pID": "p15319",
-  "title": "Test Post 2 in Manager Forum for T2T",
-  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
-  "shortDesc": "A post about how T2T is amazing",
-  "createdTime": {
-    "$date": "2024-01-29T06:33:32.731Z"
-  },
-  "createdBy": "engineer@ti.com",
-  "tags": [
-    "manager",
+    "good",
     "t2t",
-    "new post"
+    "hackathon"
   ],
-  "likes": null,
+  "likes": 0,
   "commentIds": [],
-  "views": null,
-  "accessLevels": null,
+  "views": 0,
+  "accessLevel": "manager",
   "forumName": "manager",
+  "isLiked": 0,
   "modifiedDate": {
-    "$date": "2024-01-29T06:33:32.731Z"
-  },
-  "childComments": null
-},
-{
-  "_id": {
-    "$oid": "65b769f9ef32b969ea265a77"
-  },
-  "pID": "pFt58620",
-  "title": "Test Post 10 in Manager Forum for T2T",
-  "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras luctus aliquam neque, sed ultrices diam tincidunt vitae. Aliquam erat volutpat. Sed vel suscipit enim. Duis nibh nulla, mattis fermentum vehicula ac, posuere non nibh. Phasellus bibendum sem et turpis semper blandit. Mauris gravida elit sem, vitae commodo nisl mattis at. Quisque dictum quam nec vulputate convallis. Cras congue volutpat dolor a molestie. Mauris commodo tortor dolor, nec egestas tellus finibus quis. Pellentesque id condimentum sapien, et hendrerit nisl. Etiam id purus condimentum, molestie mauris quis, ultrices tortor. Vivamus feugiat, urna id ultricies luctus, orci orci tempor lectus, nec tempor felis ex vitae lorem. Donec consequat accumsan pellentesque. Aenean et tellus aliquam, semper tortor et, ultrices dui. Nam finibus, elit quis condimentum feugiat, nisi lacus dignissim dolor, sit amet condimentum enim quam sed lectus. Nam id consequat lectus.",
-  "shortDesc": "A post about how T2T is amazing",
-  "createdTime": {
-    "$date": "2024-01-29T09:03:53.887Z"
-  },
-  "createdBy": "engineer@ti.com",
-  "tags": [
-    "manager",
-    "t2t",
-    "new post"
-  ],
-  "likes": null,
-  "commentIds": [
-    "c94239",
-    "c65993",
-    "c54756"
-  ],
-  "views": null,
-  "accessLevels": [],
-  "forumName": "manager",
-  "modifiedDate": {
-    "$date": "2024-01-29T09:03:53.887Z"
+    "$date": "2024-01-30T08:33:58.988Z"
   },
   "childComments": null
 }]

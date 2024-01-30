@@ -1,20 +1,32 @@
 [{
-  "forumName": "Manager",
-  "fID": "man",
-  "desc": "Forum for Managers to manage teams and projects"
+  "_id": {
+    "$oid": "65b7d5ca9919f16148c16b5b"
+  },
+  "forumName": "Testing",
+  "fID": "fTg85008",
+  "desc": "Testing forum for testers to test services and UI"
 },
 {
-  "forumName": "Developer",
-  "fID": "dev",
-  "desc": "A developer forum to ramp up on new skills and tech-stacks"
-},
-{
+  "_id": {
+    "$oid": "65b7d5dd9919f16148c16b5c"
+  },
   "forumName": "DevOps",
-  "fID": "devops",
+  "fID": "fDs43144",
   "desc": "Devops forum for pipeline related queries and jobs"
 },
 {
-  "forumName": "Testing",
-  "fID": "tst",
-  "desc": "Testing forum for testers to test services and UI"
+  "_id": {
+    "$oid": "65b7d5f09919f16148c16b5d"
+  },
+  "forumName": "Developer",
+  "fID": "fDr95645",
+  "desc": "A developer forum to ramp up on new skills and tech-stacks"
+},
+{
+  "_id": {
+    "$oid": "65b7d5fe9919f16148c16b5e"
+  },
+  "forumName": "Manager",
+  "fID": "fMr89425",
+  "desc": "Forum for Managers to manage teams and projects"
 }]
