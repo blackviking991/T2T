@@ -69,4 +69,18 @@ export class CommentsSectionComponent {
     this.desc = "";
   }
 
+  updateLike(cID: string) {
+    this.http.get(`http://localhost:8080/comments/like/${cID}/${1}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem("access_token")}`
+      }
+    }).subscribe((res: any) => {
+      console.log(res);
+      this.comments = [ ...this.comments ];
+    },(err: any) => {
+      console.log(err);
+    });
+  }
+
 }

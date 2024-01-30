@@ -31,7 +31,7 @@ export class ViewPostComponent implements OnInit{
   route: ActivatedRoute = inject(ActivatedRoute);
   postId!: string; 
   post!: Post;
-  isLiked!: boolean;
+  likes!: number;
 
   constructor(private http: HttpClient) {};
 
@@ -45,7 +45,7 @@ export class ViewPostComponent implements OnInit{
       }
     }).subscribe((res: any) => {
       this.post = res.post;
-      this.isLiked = res.post.isLiked;
+      this.likes = res.post.likes;
     }, (err => {
       console.log("Error fetching post details for id " + this.postId);
     }));
@@ -53,13 +53,14 @@ export class ViewPostComponent implements OnInit{
 
   toggleLikes() {
     // update like
-    this.http.post(`http://localhost:8080/posts/like/${this.postId}/${this.isLiked ? 1 : 0}`, {
+    this.http.get(`http://localhost:8080/posts/like/${this.postId}/1`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("access_token")}`
       }
     }).subscribe((res: any) => {
       console.log(res);
+      this.likes = this.likes + 1;
       this.post = { ...this.post };
     }, (err => {
       console.log("Error fetching post details for id " + this.postId);

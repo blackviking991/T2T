@@ -8,6 +8,7 @@ export interface Post {
     createdBy?: string;
     createdTime?: Date;
     likes?: number;
+    isLiked?: number;
     tags?: String[];
     commentIds?: string[];
     childComments?: Comment[];
