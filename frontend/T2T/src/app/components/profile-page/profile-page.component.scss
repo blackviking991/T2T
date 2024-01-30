@@ -1,5 +1,6 @@
 .root {
-    background-color: red;
+    padding-top: 2%;
+    background-color: #768791;
     height: 100%;
 }
 .profile-container {
@@ -8,13 +9,14 @@
     border-radius: 8px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 2%;
+    margin-left: 2%;
     padding-left: 2%;
     padding-bottom: 2%;
     font-family: "Montserrat", sans-serif;
 }
 
 .profile-info-container {
+    padding-top: 2%;
     display: flex;
     align-items: center;
 }
