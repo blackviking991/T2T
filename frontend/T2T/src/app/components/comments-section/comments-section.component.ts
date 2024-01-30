@@ -13,11 +13,12 @@ import {
   MatDialogContent,
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'comments-section',
   standalone: true,
-  imports: [HttpClientModule, DatePipe, FormsModule, CommonModule],
+  imports: [HttpClientModule, DatePipe,FormsModule, CommonModule],
   templateUrl: './comments-section.component.html',
   styleUrl: './comments-section.component.scss'
 })
@@ -89,8 +90,23 @@ export class CommentsSectionComponent {
       width: '250px',
       data: { cID, pID: this.postId, http: this.http }
     });
-    dialogRef.afterClosed().subscribe(() => {
-      this.comments = [...this.comments];
+    dialogRef.afterClosed().subscribe((res) => {
+      // this.comments = [...this.comments];
+      console.log('milgaaya', res);
+      if(!this.comments) {
+        this.comments = [res];
+      } else {
+        if(res.parentCommentId) {
+          let index = this.comments.findIndex(com => com.cID === res.parentCommentId)
+          if(index != -1) {
+            let childComments = this.comments[index].childComments ?? [];
+            childComments.push(res.comment);
+            this.comments[index].childComments = childComments;
+          }
+        } else {
+          this.comments.push(res.comment);
+        }
+      }
     });
   }
 
@@ -99,12 +115,12 @@ export class CommentsSectionComponent {
 @Component({
   selector: 'dialog-animations-example-dialog',
   template: `<h1 mat-dialog-title>Comment</h1>
-  <input cdkFocusInitial style="margin: 5px;" (keydown.enter)="addChildComment()" [(ngModel)]="desc" />
+  <input matInput cdkFocusInitial style="margin: 5px;" (keydown.enter)="addChildComment()" [(ngModel)]="desc" />
   <div mat-dialog-actions>
     <button mat-button mat-dialog-close (click)="addChildComment()">Add</button>
   </div>`,
   standalone: true,
-  imports: [FormsModule, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
+  imports: [MatInput,FormsModule, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
 })
 export class DialogAnimationsExampleDialog {
 
@@ -129,7 +145,9 @@ export class DialogAnimationsExampleDialog {
       }
     }).subscribe((res: any) => {
       console.log(res);
-      this.dialogRef.close();
+      setTimeout(() => {
+        this.dialogRef.close(res.comment);
+      }, 2000);
     },(err: any) => {
       console.log(err);
     });
