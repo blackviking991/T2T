@@ -19,6 +19,7 @@ class Post(BaseModel):
     # Access Levels will only one string ( manager, executive, developer, engineer etc..)
     accessLevel: Optional[str] = ""
     forumName: str
+    isLiked: Optional[int]=0
     modifiedDate: Optional[datetime]
     childComments: Optional[Any]
     
