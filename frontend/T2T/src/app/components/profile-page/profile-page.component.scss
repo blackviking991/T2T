@@ -1,15 +1,15 @@
 .root {
     padding-top: 2%;
-    background-color: #768791;
-    height: 100%;
+    background-color: #2b3137;
+    height: 100vh;
 }
 .profile-container {
-    width: 95%;
+    width: 75%;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin-left: 2%;
+    margin-left: 12%;
     padding-left: 2%;
     padding-bottom: 2%;
     font-family: "Montserrat", sans-serif;
@@ -75,6 +75,7 @@
 }
 
 .profile-activity {
+    color: #ffffff;
     font-size: 1.5rem;
     margin: 2%;
 }
@@ -82,4 +83,11 @@
 .post-preview-container {
     width: 60%;
     margin: 2%;
+    margin-left: 20%;
+}
+
+.profile-activity-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

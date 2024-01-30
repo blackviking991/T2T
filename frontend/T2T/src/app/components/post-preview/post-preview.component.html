@@ -33,7 +33,7 @@
     
         <div class="tag-chips">
             <div>
-                <p class="post-content">{{ formatDesc(post.desc) }}</p>
+                <p class="post-content">{{ post.shortDesc }}</p>
             </div>
             <div>
                 @for (tag of post.tags; track tag) {

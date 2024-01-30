@@ -17,10 +17,12 @@ class Post(BaseModel):
     commentIds: Optional[list] = []
     views: Optional[int] = 0
     # Access Levels will only one string ( manager, executive, developer, engineer etc..)
-    accessLevel: Optional[str] = ""
+    accessLevel: Optional[str] = str("")
     forumName: str
+    isLiked: Optional[int]=0
     modifiedDate: Optional[datetime]
     childComments: Optional[Any]
+    
     
 class PostLikes(BaseModel):
     pID: str

@@ -65,4 +65,7 @@ async def read_users_me(token: str = Depends(JWTBearer())) -> dict:
 # Get Leaderboard
 @router.get("/getLeaders", tags=["Get Leader Contributors"])
 async def get_leaders():
+    allUserCursors = dbVars.mongo_db[dbConstants.COLLECTION_USERS].find()
+    for userCursor in list(allUserCursors):
+        usersService.recalculate_user_points(User(**userCursor))
     return [User(**leader) for leader in list(dbVars.mongo_db[dbConstants.COLLECTION_USERS].find().sort("points", -1))]

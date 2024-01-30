@@ -42,8 +42,15 @@
     </div>
     
     <div class="post-preview-container">
-        <div class="profile-activity">Activity</div>
-        <hr />
+        <div class="profile-activity-container">
+            <div class="profile-activity">Activity</div>
+            <div class="profile-create-post">
+                <button mat-raised-button color="primary" (click)="createPost()">
+                    Create Post +
+                </button>
+            </div>
+        </div>
+        <hr style="color: #ffffff; border-width: 2px;" />
         <post-preview [posts]="posts"></post-preview>
     </div>
 </div>

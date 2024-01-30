@@ -44,7 +44,7 @@
         <div class="comment-action">
             <span (click)="updateLike(comment.cID)" style="cursor: pointer;" > Like ({{ comment.likes ?? 0 }})</span>
             <span> Comment ({{ comment.childComments?.length }})</span>
-            <span style="cursor: pointer;"> Reply </span>
+            <span (click)="openDialog(comment.cID)" style="cursor: pointer;"> Reply </span>
         </div>
         </div>
     </div>
