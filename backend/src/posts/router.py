@@ -29,21 +29,25 @@ async def get_new_post(post_id:str, token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         loggedInUser = globalUtils.getLoggedInUser(dict(token_payload).get("user_email"))
+        print(loggedInUser.roles)
         # todo: Add Role check for the post
+        #postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"accessLevel": {"$in": loggedInUser.roles}},{"pID": post_id}))
         postDb = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({"pID": post_id}))
-        
         # Render Level 1 of comments
-        postService.render_child_comments(postDb)
+        print("=======",postDb.accessLevel)
         
-        print(postDb)
-        
-        # Dynamically render Level 2 of comments
-        postDb.childComments = postService.render_comment_children(postDb.childComments)
-        email = loggedInUser.email
-        print(email,post_id)
-        #update post view count by one
-        postService.add_post_view_count(email, post_id)
-        return {"post": postDb}
+        if postDb.accessLevel in loggedInUser.roles:
+            postService.render_child_comments(postDb)
+            print(postDb)
+            # Dynamically render Level 2 of comments
+            postDb.childComments = postService.render_comment_children(postDb.childComments)
+            email = loggedInUser.email
+            print(email,post_id)
+            #update post view count by one
+            postService.add_post_view_count(email, post_id)
+            return {"post": postDb}
+        else:
+            return {"Message": "You are not authorized to access this post"}
     
     return {"Message": "Token Expired, please relogin"}
 
@@ -97,17 +101,20 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
 #
 # Desc: Like a post
 #
-@router.get("/like/{postID}",  tags=["Update post Likes"])
-async def update_like(postID:str, token:str = Depends(JWTBearer())):
+@router.get("/like/{postID}/{action}",  tags=["Update post Likes"])
+async def update_like(postID:str, action:int, token:str = Depends(JWTBearer())):
     token_payload = authMethods.decodeJWT(token=token)
     if token_payload is not None:
         loggedInUser = User(**dbVars.mongo_db[dbConstants.COLLECTION_USERS].find_one({"email": dict(token_payload).get("user_email")}))
         createdBy = loggedInUser.email
         
         #likeCount = Post(**dbVars.mongo_db[dbConstants.COLLECTION_POSTS].find_one({}))
-        dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
+        if action == 1:
+            dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": +1 }})
+        elif action == 0:
+            dbVars.mongo_db[dbConstants.COLLECTION_POSTS].update_one({"pID": postID}, { "$inc": { "likes": -1 }})
         #Update user table with liked post ids
-        postService.add_post_like_to_user(createdBy, postID)
+        postService.add_post_like_to_user(createdBy, postID, action)
         return {"Message": "Like Successfully added"}
     
     return {"Message": "Token Expired, please relogin"}

@@ -30,9 +30,12 @@ def render_comment_children(childComments: list[Comment]):
     return childComments
 
 # Update liked post ids with the new ones
-def add_post_like_to_user(email:str, postID:str):
+def add_post_like_to_user(email:str, postID:str, action:int):
     print(email, postID)
-    dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$push":{"likedPostsIds": postID}})
+    if action == 1:
+        dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$push":{"likedPostsIds": postID}})
+    elif action == 0:
+        dbVars.mongo_db[dbConstants.COLLECTION_USERS].update_one({"email": email}, {"$pull":{"likedPostsIds": postID}})
 
 # logic to update for each view of the post    
 def add_post_view_count(email:str, postID:str):
