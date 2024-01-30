@@ -88,7 +88,7 @@ async def create_new_post(token:str = Depends(JWTBearer()), newPost: Post = Body
         newPost.createdBy = loggedInUser.email
         newPost.createdTime = newPost.modifiedDate = datetime.datetime.utcnow()
         newPost.tags = postUtils.make_tags_lowerCase(newPost.tags if newPost.tags is not None else [])
-        newPost.accessLevel = postService.get_access_level_for_post(loggedInUser.roles)
+        newPost.accessLevel = postService.get_access_level_for_post(loggedInUser.roles)[0]
         
         # Write to the db
         print("Writing Post with ID {} to the DB", newPost.pID)
