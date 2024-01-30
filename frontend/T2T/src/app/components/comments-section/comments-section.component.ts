@@ -1,8 +1,18 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Comment } from '../../model/Comment';
 import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogTitle,
+  MatDialogContent,
+  MAT_DIALOG_DATA,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'comments-section',
@@ -18,7 +28,7 @@ export class CommentsSectionComponent {
   http: HttpClient;
   desc: string;
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, public dialog: MatDialog) {
     this.desc = "";
     this.http = httpClient;
   }
@@ -50,21 +60,12 @@ export class CommentsSectionComponent {
       console.log(err);
     });
   }
+
   addComment() {
     // cal API
     this.pushComment({
       text: this.desc,
       postId: this.postId
-    });
-    this.desc = "";
-  }
-
-  addChildComment(cId: string) {
-    // call API
-    this.pushComment({
-      text: this.desc,
-      postId: this.postId,
-      parentCommentId: cId
     });
     this.desc = "";
   }
@@ -83,4 +84,65 @@ export class CommentsSectionComponent {
     });
   }
 
+  openDialog(cID: string): void {
+    let dialogRef = this.dialog.open(DialogAnimationsExampleDialog, {
+      width: '250px',
+      data: { cID, pID: this.postId, http: this.http }
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.comments = [...this.comments];
+    });
+  }
+
 }
+
+@Component({
+  selector: 'dialog-animations-example-dialog',
+  template: `<h1 mat-dialog-title>Comment</h1>
+  <input cdkFocusInitial style="margin: 5px;" (keydown.enter)="addChildComment()" [(ngModel)]="desc" />
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="addChildComment()">Add</button>
+  </div>`,
+  standalone: true,
+  imports: [FormsModule, MatButtonModule, MatDialogActions, MatDialogClose, MatDialogTitle, MatDialogContent],
+})
+export class DialogAnimationsExampleDialog {
+
+  desc!: string;
+  cID!: string;
+  pID!: string;
+  http!: HttpClient;
+
+  constructor(public dialogRef: MatDialogRef<DialogAnimationsExampleDialog>, @Inject(MAT_DIALOG_DATA) public data: {cID: string, pID: string, http: HttpClient}) {
+    this.desc = "";
+    this.cID = data.cID;
+    this.pID = data.pID;
+    this.http = data.http;
+  }
+  
+  pushComment(body: Comment) {
+    if(body.text === "") return;
+    this.http.post('http://localhost:8080/comments/add', body, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem("access_token")}`
+      }
+    }).subscribe((res: any) => {
+      console.log(res);
+      this.dialogRef.close();
+    },(err: any) => {
+      console.log(err);
+    });
+  }
+
+  addChildComment() {
+    // call API
+    this.pushComment({
+      text: this.desc,
+      postId: this.pID,
+      parentCommentId: this.cID
+    });
+    this.desc = "";
+  }
+}
+
