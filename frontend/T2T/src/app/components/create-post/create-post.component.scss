@@ -1,13 +1,15 @@
 .add-post-content{
-    background-color: rgb(243, 243, 243);
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,1) 38%, rgba(37,38,40,1) 100%);
     height: max-content;
   }
   
   .new-post-title{
     color: white;
-    background-color: black;
-    font-size: 2em;
-    padding: 20px
+    background-color: 	#2b3137;
+    font-size: 3em;
+    padding: 50px;
+    text-align: center;
   }
   .tox {
     height: 600px;
@@ -18,11 +20,15 @@
     background-color: black;
   }
   .post-content, .post-title{
-    color: red;
+    color: rgb(255, 255, 255);
   }
   .form-group {
     margin-left: 40px;
     margin-right: 40px;
+  }
+  form {
+    width: 80%;
+    margin-left: 10%;
   }
   mat-label {
     font-size: 1.5em;
@@ -31,6 +37,9 @@
     height: auto;
     width: auto;
   }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: rgb(58, 57, 57);
+  }
   .p-dropdown-panel .p-dropdown-items  {
     padding-left: 0em !important;
   }
@@ -38,7 +47,7 @@
     width: 100%;
   }
   .btn {
-    margin-left: 40px;
+    margin-left: 30px;
     padding-top: 10px;
     padding-bottom: 20px;
   }

@@ -27,6 +27,7 @@
             <editor [disabled]="true" [initialValue]="post.desc" [init]="editorConfig"></editor>
         </div>
         <div class="tags">
+            <span style="color: white;padding: 10px;">Tags:</span>
             @for (item of post.tags; track $index) {
                 <mat-chip-listbox>
                     <mat-chip color="primary" ><span>{{item}}</span></mat-chip>

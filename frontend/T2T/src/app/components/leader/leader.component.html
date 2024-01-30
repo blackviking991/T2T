@@ -1,10 +1,9 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
       <h2>T2T Leader Board</h2>
-      <ul>
-        <li>Leader 1 </li>
-        <li>Leader 2</li>
-      </ul>
+        @for (leader of leaderBoard; track $index) {
+            <h3>{{leader.firstName}}</h3>
+        }
     </mat-drawer>
   
     <div class="example-sidenav-content">

@@ -23,6 +23,8 @@ export class ViewPostComponent implements OnInit{
     suffix: '.min',
     menubar: false,
     toolbar: false,
+    skin: "oxide-dark", 
+    content_css: "dark",
     plugins: '',
     height: 650,
   };

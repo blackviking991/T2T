@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 @Component({
@@ -8,6 +9,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   templateUrl: './leader.component.html',
   styleUrl: './leader.component.scss'
 })
-export class LeaderComponent {
+export class LeaderComponent implements OnInit{
+  constructor(private http: HttpClient){}
+  leaderBoard: any = [];
+  ngOnInit(): void {
+      this.http.get('http://localhost:8080/users/getLeaders').subscribe((data: any) => {
+        console.log(data);
+        this.leaderBoard = data;
+      },(err => {
+        console.log(err);
+      }));
+  }
   showFiller = false;
 }

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -8,20 +8,37 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LeaderComponent } from '../leader/leader.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HttpClientModule, MatCardModule,MatButtonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, LeaderComponent],
+  imports: [HttpClientModule,MatIcon, MatCardModule,MatButtonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, LeaderComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
   Loginform: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email ]),
     password: new FormControl('', [Validators.required]),
   });
   constructor(private http: HttpClient, private router: Router){};
+  leaderBoard: any = [];
+  ngOnInit(): void {
+    this.http.get('http://localhost:8080/users/getLeaders').subscribe((data: any) => {
+      console.log(data);
+      this.leaderBoard = data;
+    },(err => {
+      console.log(err);
+    }));
+  }
+  onClick(): void {
+    console.log('click')
+    const menuToggle = document.querySelector('.toggle');
+    const showcase = document.querySelector('.showcase');
+    menuToggle!.classList.toggle('active');
+    showcase!.classList.toggle('active');
+  }
 
   submit() {
     if (this.Loginform.valid) {

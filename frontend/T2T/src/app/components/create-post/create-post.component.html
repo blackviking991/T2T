@@ -3,7 +3,7 @@
       <div class="top">
         <h3 class="new-post-title">Create New Post</h3>
       </div>
-      <form style="margin-top: 20px;" [formGroup]="addPostForm" (ngSubmit)="addPost()">
+      <form style="margin-top: 95px;" [formGroup]="addPostForm" (ngSubmit)="addPost()">
         <div class="form-group">
           <mat-label class="post-title">Title</mat-label>
           <div>
@@ -21,7 +21,6 @@
             </div>
         </div>
         <div class="form-group" style="height: 700px;">
-          <mat-label class="post-content">Body</mat-label>
           <editor [formControlName]="'desc'" [init]="editorConfig"></editor>
         </div>
         <div class="form-group" style="margin-top: 10px;">
